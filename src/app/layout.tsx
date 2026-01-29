@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import LightPillar from "@/components/LightPillar";
+import { Header } from "@/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -57,22 +58,23 @@ export default function RootLayout({
           <LightPillar
             topColor="#1E40AF"
             bottomColor="#06B6D4"
-            intensity={1.2}
-            rotationSpeed={0.4}
-            glowAmount={0.002}
-            pillarWidth={5.3}
+            intensity={1.5}
+            rotationSpeed={0.5}
+            glowAmount={0.003}
+            pillarWidth={5.0}
             pillarHeight={0.4}
-            noiseIntensity={0.5}
-            pillarRotation={25}
-            interactive={false}
+            noiseIntensity={0.6}
+            pillarRotation={20}
+            interactive={true}
             mixBlendMode="screen"
             quality="high"
           />
         </div>
 
-        {/* Legibility Overlay: Subtle vignette/darkening to make text pop */}
-        <div className="fixed inset-0 -z-10 pointer-events-none bg-black/40 bg-[radial-gradient(circle_at_center,transparent_0%,black_90%)]" />
+        {/* Legibility Overlay: Much more subtle now to keep the background vibrant */}
+        <div className="fixed inset-0 -z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]" />
 
+        <Header />
         <main className="relative z-10 w-full h-full">
           {children}
         </main>

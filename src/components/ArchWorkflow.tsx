@@ -30,7 +30,13 @@ export function ArchWorkflow() {
     return (
         <section className="py-24 px-4 relative z-10 overflow-hidden">
             <div className="max-w-6xl mx-auto">
-                <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-4">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex flex-col md:flex-row items-end justify-between mb-16 gap-4"
+                >
                     <div className="space-y-4">
                         <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter">
                             Workflow <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">Arquitectónico</span>
@@ -39,7 +45,7 @@ export function ArchWorkflow() {
                             Transformo conceptos abstractos en realidades construibles mediante un proceso técnico riguroso.
                         </p>
                     </div>
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
                     {/* Línea conectora decorativa en escritorio */}

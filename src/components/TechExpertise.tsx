@@ -33,14 +33,20 @@ export function TechExpertise() {
         <section className="py-24 px-4 relative z-10 overflow-hidden">
             <div className="max-w-6xl mx-auto space-y-16">
 
-                <div className="text-center space-y-4">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    className="text-center space-y-4"
+                >
                     <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter">
                         Experticia <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">Verificada</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">
                         Competencias técnicas avanzadas respaldadas por certificaciones oficiales de Microsoft.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
