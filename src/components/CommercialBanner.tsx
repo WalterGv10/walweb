@@ -22,9 +22,10 @@ export function CommercialBanner() {
         >
             {/* Immersive Background Elements */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-600/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2" />
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 contrast-150 brightness-50 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-black/60" /> {/* Added solid base */}
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 opacity-30" />
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-600/10 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 opacity-30" />
+                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.08] brightness-50 mix-blend-overlay" />
             </div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
