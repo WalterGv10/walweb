@@ -61,27 +61,45 @@ const LightPillar: React.FC<LightPillarProps> = ({
         const width = container.clientWidth;
         const height = container.clientHeight;
 
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        const isLowEndDevice = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
+        // Better mobile detection
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || width < 768;
+        // Assume mid-range mobile like A34 needs help
+        const isLowEndDevice = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) || isMobile;
 
         let effectiveQuality = quality;
-        if (isLowEndDevice && quality === 'high') effectiveQuality = 'medium';
-        // Ya no forzamos 'low' en móviles indiscriminadamente para evitar que se vea "cagado" (borroso/pixelado) en teléfonos modernos
-        if (isMobile && quality === 'low') effectiveQuality = 'low';
+
+        // Force optimization on mobile
+        if (isMobile) {
+            effectiveQuality = 'low';
+        } else if (isLowEndDevice && quality === 'high') {
+            effectiveQuality = 'medium';
+        }
 
         const qualitySettings = {
-            low: { iterations: 40, waveIterations: 2, pixelRatio: Math.min(window.devicePixelRatio, 1.0), precision: 'mediump', stepMultiplier: 1.3 },
-            medium: { iterations: 60, waveIterations: 3, pixelRatio: Math.min(window.devicePixelRatio, 1.5), precision: 'highp', stepMultiplier: 1.1 },
+            low: {
+                iterations: 24, // Reduced from 40
+                waveIterations: 2,
+                pixelRatio: isMobile ? Math.min(window.devicePixelRatio, 1.0) : Math.min(window.devicePixelRatio, 1.0), // Force 1.0 on low/mobile
+                precision: 'mediump',
+                stepMultiplier: 1.5 // Increased step size for faster raymarch
+            },
+            medium: {
+                iterations: 48, // Reduced from 60
+                waveIterations: 3,
+                pixelRatio: Math.min(window.devicePixelRatio, 1.25),
+                precision: 'mediump',
+                stepMultiplier: 1.2
+            },
             high: {
-                iterations: 100,
+                iterations: 80, // Reduced from 100
                 waveIterations: 4,
-                pixelRatio: Math.min(window.devicePixelRatio, 2.0),
+                pixelRatio: Math.min(window.devicePixelRatio, 1.5), // Capped at 1.5 even for desktop to be safe
                 precision: 'highp',
                 stepMultiplier: 1.0
             }
         };
 
-        const settings = qualitySettings[effectiveQuality] || qualitySettings.medium;
+        const settings = qualitySettings[effectiveQuality] || qualitySettings.low;
 
         // Scene setup
         const scene = new THREE.Scene();
@@ -94,7 +112,7 @@ const LightPillar: React.FC<LightPillarProps> = ({
             renderer = new THREE.WebGLRenderer({
                 antialias: false,
                 alpha: true,
-                powerPreference: effectiveQuality === 'low' ? 'low-power' : 'high-performance',
+                powerPreference: 'high-performance', // Try to get best GPU mode even if work is light
                 precision: settings.precision,
                 stencil: false,
                 depth: false
