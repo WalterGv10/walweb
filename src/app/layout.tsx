@@ -14,8 +14,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WalWeb - LightPillar Project",
-  description: "A modern web application with dynamic background effects.",
+  title: "WalWeb | Walter García - Soluciones Web, Redes y Arquitectura",
+  description: "Portafolio profesional de Walter García. Especialista en desarrollo web con Next.js, infraestructura de redes (Cisco/Ubiquiti) y diseño arquitectónico profesional en Guatemala.",
+  keywords: ["Walter Garcia", "WalWeb", "Desarrollo Web Guatemala", "Redes Cisco Ubiquiti", "Arquitectura Planos", "Sistemas de Inventario", "Soporte Bancario", "MTA Microsoft"],
+  authors: [{ name: "Walter García" }],
+  openGraph: {
+    title: "WalWeb | Soluciones Digitales & Arquitectura",
+    description: "Transformo ideas en experiencias digitales de alto impacto y diseños arquitectónicos profesionales.",
+    url: "https://walweb.com.gt",
+    siteName: "WalWeb",
+    images: [
+      {
+        url: "/walter.png",
+        width: 800,
+        height: 800,
+        alt: "Walter García - WalWeb",
+      },
+    ],
+    locale: "es_GT",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WalWeb | Walter García",
+    description: "Desarrollo Web, Redes y Arquitectura.",
+    images: ["/walter.png"],
+  },
 };
 
 export default function RootLayout({
