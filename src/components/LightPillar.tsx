@@ -77,23 +77,23 @@ const LightPillar: React.FC<LightPillarProps> = ({
 
         const qualitySettings = {
             low: {
-                iterations: 24, // Reduced from 40
-                waveIterations: 2,
-                pixelRatio: isMobile ? Math.min(window.devicePixelRatio, 1.0) : Math.min(window.devicePixelRatio, 1.0), // Force 1.0 on low/mobile
+                iterations: 32, // Adjusted: Enough to see volume, low enough for mobile
+                waveIterations: 3, // Restored: Organic complexity
+                pixelRatio: Math.min(window.devicePixelRatio, 1.0), // Strict 1.0 limit for performance
                 precision: 'mediump',
-                stepMultiplier: 1.5 // Increased step size for faster raymarch
+                stepMultiplier: 1.15 // Finer steps than 1.5 for better quality
             },
             medium: {
-                iterations: 48, // Reduced from 60
+                iterations: 48,
                 waveIterations: 3,
                 pixelRatio: Math.min(window.devicePixelRatio, 1.25),
                 precision: 'mediump',
                 stepMultiplier: 1.2
             },
             high: {
-                iterations: 80, // Reduced from 100
+                iterations: 80,
                 waveIterations: 4,
-                pixelRatio: Math.min(window.devicePixelRatio, 1.5), // Capped at 1.5 even for desktop to be safe
+                pixelRatio: Math.min(window.devicePixelRatio, 1.5),
                 precision: 'highp',
                 stepMultiplier: 1.0
             }
