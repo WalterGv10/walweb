@@ -93,7 +93,7 @@ export function Contact() {
 
                 {/* Footer Final */}
                 <div className="mt-12 md:mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 text-gray-500 text-[10px]">
-                    <p className="text-center md:text-left">© {new Date().getFullYear()} WalWeb by Walter Fernando García Véliz.</p>
+                    <p className="text-center md:text-left">© {new Date().getFullYear()} WalWeb by Walter García.</p>
                     <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center text-center">
                         <span className="flex items-center gap-2 hover:text-blue-400 transition-colors uppercase tracking-widest leading-none">
                             Guatemala 🇬🇹
