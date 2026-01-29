@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://walweb.com.gt"),
-  title: "WalWeb | Walter García - Soluciones Web, Redes y Arquitectura",
-  description: "Portafolio profesional de Walter García. Especialista en desarrollo web con Next.js, infraestructura de redes (Cisco/Ubiquiti) y diseño arquitectónico profesional en Guatemala.",
-  keywords: ["Walter Garcia", "WalWeb", "Desarrollo Web Guatemala", "Redes Cisco Ubiquiti", "Arquitectura Planos", "Sistemas de Inventario", "Soporte Bancario", "MTA Microsoft"],
-  authors: [{ name: "Walter García" }],
+  title: "WalWeb | Walter Fernando García Véliz - Soluciones Web, Redes y Arquitectura",
+  description: "Portafolio profesional de Walter Fernando García Véliz. Especialista en desarrollo web con Next.js, infraestructura de redes (Cisco/Ubiquiti) y diseño arquitectónico profesional en Guatemala.",
+  keywords: ["Walter Fernando García Véliz", "WalWeb", "Desarrollo Web Guatemala", "Redes Cisco Ubiquiti", "Arquitectura Planos", "Sistemas de Inventario", "Soporte Bancario", "MTA Microsoft"],
+  authors: [{ name: "Walter Fernando García Véliz" }],
   openGraph: {
     title: "WalWeb | Soluciones Digitales & Arquitectura",
     description: "Transformo ideas en experiencias digitales de alto impacto y diseños arquitectónicos profesionales.",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: "/walter.png",
         width: 800,
         height: 800,
-        alt: "Walter García - WalWeb",
+        alt: "Walter Fernando García Véliz - WalWeb",
       },
     ],
     locale: "es_GT",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WalWeb | Walter García",
+    title: "WalWeb | Walter Fernando García Véliz",
     description: "Desarrollo Web, Redes y Arquitectura.",
     images: ["/walter.png"],
   },

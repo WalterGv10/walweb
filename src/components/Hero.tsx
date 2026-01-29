@@ -24,7 +24,7 @@ export function Hero() {
                             <div className="relative w-full h-full rounded-[49px] md:rounded-[79px] overflow-hidden grayscale-[0.2] hover:grayscale-0 transition-all duration-700">
                                 <Image
                                     src="/walter.png"
-                                    alt="Walter - WalWeb Solutions"
+                                    alt="Walter Fernando García Véliz - WalWeb Solutions"
                                     fill
                                     className="object-cover object-top scale-110 hover:scale-100 transition-transform duration-1000"
                                     priority
@@ -71,7 +71,7 @@ export function Hero() {
                             }}
                             className="text-sm sm:text-base md:text-lg font-medium text-blue-400/90 tracking-wide flex items-center justify-center lg:justify-start gap-1"
                         >
-                            {Array.from("Hola, soy Walter Fernando GV.").map((char, index) => (
+                            {Array.from("Hola, soy Walter Fernando García Véliz.").map((char, index) => (
                                 <motion.span
                                     key={index}
                                     variants={{
