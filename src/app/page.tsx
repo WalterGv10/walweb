@@ -1,10 +1,10 @@
-
 import { Hero } from "@/components/Hero";
 import { History } from "@/components/History";
 import { PersonalStats } from "@/components/PersonalStats";
 import { TechExpertise } from "@/components/TechExpertise";
 import { ArchWorkflow } from "@/components/ArchWorkflow";
 import { Contact } from "@/components/Contact";
+import { CommercialBanner } from "@/components/CommercialBanner";
 
 export default function Home() {
   return (
@@ -12,6 +12,7 @@ export default function Home() {
       <Hero />
       <PersonalStats />
       <TechExpertise />
+      <CommercialBanner />
       <ArchWorkflow />
       <History />
       <Contact />

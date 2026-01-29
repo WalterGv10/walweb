@@ -55,13 +55,7 @@ export function Hero() {
 
                 {/* Contenido Texto */}
                 <div className="lg:col-span-7 lg:order-1 space-y-4 md:space-y-6 text-center lg:text-left">
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm"
-                    >
-                        <span className="text-[10px] font-medium text-blue-400 tracking-wider uppercase">Disponible para proyectos</span>
-                    </motion.div>
+
 
                     <div className="space-y-2 md:space-y-4">
                         <motion.h2
@@ -96,9 +90,7 @@ export function Hero() {
                                 className="w-0.5 h-5 bg-blue-400 ml-1 inline-block"
                             />
                         </motion.h2>
-                        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] text-white">
-                            WAL<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-400 to-white">WEB</span>
-                        </h1>
+
                         <div className="text-lg sm:text-xl md:text-3xl font-light text-gray-300">
                             <BlurText text="Soluciones Web & Arquitectura" delay={50} />
                         </div>
