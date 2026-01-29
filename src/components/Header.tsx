@@ -30,16 +30,16 @@ export function Header() {
             <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
                 {/* Logo & Brand */}
                 <Link href="/" className="flex items-center gap-2 md:gap-3 group">
-                    <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl overflow-hidden border border-white/20 group-hover:border-blue-500/50 transition-colors bg-white/5">
+                    <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl overflow-hidden border border-white/10 group-hover:border-blue-500/50 transition-all bg-black/20 backdrop-blur-sm">
                         <Image
                             src="/logo.png"
                             alt="WalWeb Logo"
                             fill
-                            className="object-cover"
+                            className="object-cover mix-blend-screen scale-110 group-hover:scale-125 transition-transform duration-500"
                         />
                     </div>
-                    <span className="text-lg md:text-xl font-black tracking-tighter text-white">
-                        WAL<span className="text-blue-500">WEB</span>
+                    <span className="text-lg md:text-xl font-black tracking-tighter text-white group-hover:text-blue-400 transition-colors">
+                        WAL<span className="text-blue-500 group-hover:text-white transition-colors">WEB</span>
                     </span>
                 </Link>
 

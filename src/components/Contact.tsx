@@ -78,8 +78,13 @@ export function Contact() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
                     <div className="absolute inset-0 flex items-center justify-center p-6 md:p-8">
                         <div className="text-center space-y-1 md:space-y-2">
-                            <div className="relative w-12 h-12 md:w-16 md:h-16 mx-auto mb-2 md:mb-4 rounded-xl md:rounded-2xl overflow-hidden border border-white/20 bg-white/5">
-                                <Image src="/logo.png" alt="Logo" fill className="object-cover" />
+                            <div className="relative w-12 h-12 md:w-16 md:h-16 mx-auto mb-2 md:mb-4 rounded-xl md:rounded-2xl overflow-hidden border border-white/10 bg-black/40 backdrop-blur-md shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                                <Image
+                                    src="/logo.png"
+                                    alt="Logo"
+                                    fill
+                                    className="object-cover mix-blend-screen scale-110"
+                                />
                             </div>
                             <p className="text-white text-base md:text-2xl font-black tracking-[0.1em] md:tracking-[0.2em] uppercase">Architecture & Systems</p>
                         </div>

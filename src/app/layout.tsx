@@ -41,6 +41,10 @@ export const metadata: Metadata = {
     description: "Desarrollo Web, Redes y Arquitectura.",
     images: ["/walter.png"],
   },
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
