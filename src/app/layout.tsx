@@ -58,12 +58,12 @@ export default function RootLayout({
           <LightPillar
             topColor="#1E40AF"
             bottomColor="#06B6D4"
-            intensity={1.5}
+            intensity={1.6}
             rotationSpeed={0.5}
             glowAmount={0.003}
-            pillarWidth={5.0}
+            pillarWidth={4.0}
             pillarHeight={0.4}
-            noiseIntensity={0.6}
+            noiseIntensity={0.4}
             pillarRotation={20}
             interactive={true}
             mixBlendMode="screen"
@@ -71,8 +71,8 @@ export default function RootLayout({
           />
         </div>
 
-        {/* Legibility Overlay: Much more subtle now to keep the background vibrant */}
-        <div className="fixed inset-0 -z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]" />
+        {/* Legibility Overlay: Extremely subtle to let the LightPillars shine on mobile */}
+        <div className="fixed inset-0 -z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
 
         <Header />
         <main className="relative z-10 w-full h-full">

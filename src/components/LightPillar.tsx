@@ -62,19 +62,20 @@ const LightPillar: React.FC<LightPillarProps> = ({
         const height = container.clientHeight;
 
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        const isLowEndDevice = isMobile || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
+        const isLowEndDevice = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
 
         let effectiveQuality = quality;
         if (isLowEndDevice && quality === 'high') effectiveQuality = 'medium';
-        if (isMobile && quality !== 'low') effectiveQuality = 'low';
+        // Ya no forzamos 'low' en móviles indiscriminadamente para evitar que se vea "cagado" (borroso/pixelado) en teléfonos modernos
+        if (isMobile && quality === 'low') effectiveQuality = 'low';
 
         const qualitySettings = {
-            low: { iterations: 24, waveIterations: 1, pixelRatio: 0.5, precision: 'mediump', stepMultiplier: 1.5 },
-            medium: { iterations: 40, waveIterations: 2, pixelRatio: 0.65, precision: 'mediump', stepMultiplier: 1.2 },
+            low: { iterations: 40, waveIterations: 2, pixelRatio: Math.min(window.devicePixelRatio, 1.0), precision: 'mediump', stepMultiplier: 1.3 },
+            medium: { iterations: 60, waveIterations: 3, pixelRatio: Math.min(window.devicePixelRatio, 1.5), precision: 'highp', stepMultiplier: 1.1 },
             high: {
-                iterations: 80,
+                iterations: 100,
                 waveIterations: 4,
-                pixelRatio: Math.min(window.devicePixelRatio, 2),
+                pixelRatio: Math.min(window.devicePixelRatio, 2.0),
                 precision: 'highp',
                 stepMultiplier: 1.0
             }

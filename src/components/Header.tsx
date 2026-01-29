@@ -24,13 +24,13 @@ export function Header() {
 
     return (
         <header
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "py-4 bg-black/50 backdrop-blur-xl border-b border-white/10" : "py-6 bg-transparent"
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "py-3 bg-black/60 backdrop-blur-xl border-b border-white/10" : "py-5 bg-transparent"
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
                 {/* Logo & Brand */}
-                <Link href="/" className="flex items-center gap-3 group">
-                    <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-white/20 group-hover:border-blue-500/50 transition-colors bg-white/5">
+                <Link href="/" className="flex items-center gap-2 md:gap-3 group">
+                    <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl overflow-hidden border border-white/20 group-hover:border-blue-500/50 transition-colors bg-white/5">
                         <Image
                             src="/logo.png"
                             alt="WalWeb Logo"
@@ -38,7 +38,7 @@ export function Header() {
                             className="object-cover"
                         />
                     </div>
-                    <span className="text-xl font-black tracking-tighter text-white">
+                    <span className="text-lg md:text-xl font-black tracking-tighter text-white">
                         WAL<span className="text-blue-500">WEB</span>
                     </span>
                 </Link>
@@ -64,10 +64,10 @@ export function Header() {
 
                 {/* Mobile Menu Toggle */}
                 <button
-                    className="md:hidden p-2 text-white"
+                    className="md:hidden p-1.5 text-white"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
-                    {mobileMenuOpen ? <X /> : <Menu />}
+                    {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
 
@@ -75,21 +75,28 @@ export function Header() {
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
+                        initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-2xl border-b border-white/10 p-6 md:hidden flex flex-col gap-6"
+                        exit={{ opacity: 0, y: -10 }}
+                        className="absolute top-full left-4 right-4 mt-2 bg-black/90 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 md:hidden flex flex-col gap-5 shadow-2xl"
                     >
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="text-lg font-bold text-white hover:text-blue-400 transition-colors"
+                                className="text-base font-bold text-white hover:text-blue-400 transition-colors"
                             >
                                 {link.name}
                             </Link>
                         ))}
+                        <Link
+                            href="#contact"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="w-full py-3 rounded-xl bg-blue-600 text-white text-center font-bold"
+                        >
+                            Contratar Ahora
+                        </Link>
                     </motion.div>
                 )}
             </AnimatePresence>
