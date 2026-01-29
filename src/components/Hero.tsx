@@ -64,6 +64,38 @@ export function Hero() {
                     </motion.div>
 
                     <div className="space-y-2 md:space-y-4">
+                        <motion.h2
+                            initial="hidden"
+                            animate="visible"
+                            variants={{
+                                hidden: { opacity: 0 },
+                                visible: {
+                                    opacity: 1,
+                                    transition: {
+                                        staggerChildren: 0.05,
+                                        delayChildren: 0.2
+                                    }
+                                }
+                            }}
+                            className="text-base sm:text-lg md:text-xl font-medium text-blue-400/90 tracking-wide flex items-center justify-center lg:justify-start gap-1"
+                        >
+                            {Array.from("Hola, soy Walter Fernando GV.").map((char, index) => (
+                                <motion.span
+                                    key={index}
+                                    variants={{
+                                        hidden: { opacity: 0, x: -5 },
+                                        visible: { opacity: 1, x: 0 }
+                                    }}
+                                >
+                                    {char === " " ? "\u00A0" : char}
+                                </motion.span>
+                            ))}
+                            <motion.span
+                                animate={{ opacity: [0, 1, 0] }}
+                                transition={{ duration: 0.8, repeat: Infinity }}
+                                className="w-0.5 h-5 bg-blue-400 ml-1 inline-block"
+                            />
+                        </motion.h2>
                         <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] text-white">
                             WAL<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-400 to-white">WEB</span>
                         </h1>
