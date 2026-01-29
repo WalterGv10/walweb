@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 
 export function Hero() {
     return (
-        <section className="relative min-h-[100svh] lg:min-h-[600px] flex flex-col items-center justify-center pt-24 pb-12 px-4 overflow-hidden">
+        <section className="relative min-h-[100svh] lg:min-h-[550px] flex flex-col items-center justify-center pt-20 pb-8 px-4 overflow-hidden">
             {/* Contenedor Principal */}
-            <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+            <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
 
                 {/* Aspecto Visual: Avatar */}
                 <div className="lg:col-span-5 lg:order-2 relative flex justify-center lg:justify-end">
@@ -19,8 +19,8 @@ export function Hero() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="relative"
                     >
-                        {/* Marco del Avatar - Ajustado para laptops con poca altura (Laptop height optimization) */}
-                        <div className="relative z-10 w-[220px] h-[280px] sm:w-64 sm:h-80 md:w-80 md:h-[400px] lg:w-[320px] lg:max-h-[420px] rounded-[50px] md:rounded-[80px] p-1 bg-gradient-to-b from-blue-500/30 via-cyan-500/10 to-transparent backdrop-blur-sm overflow-hidden border border-white/20 shadow-2xl shadow-blue-500/20">
+                        {/* Marco del Avatar - Altamente optimizado para viewports bajos (1366x599) */}
+                        <div className="relative z-10 w-[200px] h-[260px] sm:w-64 sm:h-80 md:w-80 md:h-[380px] lg:w-[300px] lg:h-[400px] rounded-[50px] md:rounded-[80px] p-1 bg-gradient-to-b from-blue-500/30 via-cyan-500/10 to-transparent backdrop-blur-sm overflow-hidden border border-white/20 shadow-2xl shadow-blue-500/20">
                             <div className="relative w-full h-full rounded-[49px] md:rounded-[79px] overflow-hidden grayscale-[0.2] hover:grayscale-0 transition-all duration-700">
                                 <Image
                                     src="/walter.png"
@@ -34,19 +34,19 @@ export function Hero() {
                             </div>
                         </div>
 
-                        {/* Card Flotante - Redimensionada para evitar oclusiones en 1366x768 */}
+                        {/* Card Flotante - Redimensionada y posicionada para no colisionar */}
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute -right-2 top-10 z-20 p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl hidden sm:block"
+                            className="absolute -right-2 top-6 z-20 p-2.5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl hidden sm:block"
                         >
                             <div className="flex items-center gap-2">
-                                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-blue-500/50">
+                                <div className="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-[10px] shadow-lg shadow-blue-500/50">
                                     15+
                                 </div>
                                 <div>
-                                    <p className="text-[8px] uppercase tracking-widest text-gray-400 font-bold">Años</p>
-                                    <p className="text-[10px] font-bold text-white">Experiencia</p>
+                                    <p className="text-[7px] uppercase tracking-widest text-gray-400 font-bold">Años</p>
+                                    <p className="text-[9px] font-bold text-white uppercase">Experiencia</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -55,8 +55,6 @@ export function Hero() {
 
                 {/* Contenido Texto */}
                 <div className="lg:col-span-7 lg:order-1 space-y-4 md:space-y-6 text-center lg:text-left">
-
-
                     <div className="space-y-2 md:space-y-4">
                         <motion.h2
                             initial="hidden"
@@ -66,12 +64,12 @@ export function Hero() {
                                 visible: {
                                     opacity: 1,
                                     transition: {
-                                        staggerChildren: 0.05,
-                                        delayChildren: 0.2
+                                        staggerChildren: 0.04,
+                                        delayChildren: 0.1
                                     }
                                 }
                             }}
-                            className="text-base sm:text-lg md:text-xl font-medium text-blue-400/90 tracking-wide flex items-center justify-center lg:justify-start gap-1"
+                            className="text-sm sm:text-base md:text-lg font-medium text-blue-400/90 tracking-wide flex items-center justify-center lg:justify-start gap-1"
                         >
                             {Array.from("Hola, soy Walter Fernando GV.").map((char, index) => (
                                 <motion.span
@@ -87,14 +85,14 @@ export function Hero() {
                             <motion.span
                                 animate={{ opacity: [0, 1, 0] }}
                                 transition={{ duration: 0.8, repeat: Infinity }}
-                                className="w-0.5 h-5 bg-blue-400 ml-1 inline-block"
+                                className="w-0.5 h-4 bg-blue-400 ml-1 inline-block"
                             />
                         </motion.h2>
 
-                        <div className="text-lg sm:text-xl md:text-3xl font-light text-gray-300">
+                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tighter leading-tight">
                             <BlurText text="Soluciones Web & Arquitectura" delay={50} />
-                        </div>
-                        <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-lg mx-auto lg:mx-0 leading-relaxed px-4 lg:px-0">
+                        </h1>
+                        <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-lg mx-auto lg:mx-0 leading-relaxed px-2 lg:px-0">
                             Transformo ideas en experiencias digitales de alto impacto y diseños arquitectónicos profesionales.
                         </p>
                     </div>
@@ -102,14 +100,14 @@ export function Hero() {
                     <div className="flex flex-col sm:flex-row gap-3 pt-2 px-4 lg:px-0">
                         <Link
                             href="#contact"
-                            className="px-6 py-3 md:px-8 md:py-4 bg-white text-black font-bold rounded-xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                            className="px-6 py-3.5 md:px-8 md:py-4 bg-white text-black font-bold rounded-xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center shadow-xl text-sm md:text-base"
                         >
                             Iniciar Proyecto
                             <ArrowRight className="ml-2 w-4 h-4" />
                         </Link>
                         <Link
                             href="#history"
-                            className="px-6 py-3 md:px-8 md:py-4 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl border border-white/10 backdrop-blur-md transition-all flex items-center justify-center text-sm md:text-base"
+                            className="px-6 py-3.5 md:px-8 md:py-4 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl border border-white/10 backdrop-blur-md transition-all flex items-center justify-center text-sm md:text-base"
                         >
                             Trayectoria
                         </Link>

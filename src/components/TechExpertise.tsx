@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Server, ShieldCheck, CheckCircle2, Globe } from "lucide-react";
+import { Server, ShieldCheck, CheckCircle2, Globe, Cpu } from "lucide-react";
 
 export function TechExpertise() {
     const expertise = [
@@ -24,6 +24,17 @@ export function TechExpertise() {
                 "Cableado Estructurado",
                 "Infraestructura Cisco/Ubiquiti",
                 "Seguridad & Antivirus"
+            ]
+        },
+        {
+            category: "Web Arch",
+            icon: <Cpu className="text-indigo-400" />,
+            skills: [
+                "Next.js & React Core",
+                "Tailwind CSS Expert",
+                "TypeScript & JS ES6+",
+                "Astro & Angular Dev",
+                "Performance Optimization"
             ]
         }
     ];
@@ -49,7 +60,7 @@ export function TechExpertise() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
 
                     {/* Habilidades */}
-                    <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="lg:col-span-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {expertise.map((group, i) => (
                             <motion.div
                                 key={i}
@@ -78,7 +89,7 @@ export function TechExpertise() {
                     </div>
 
                     {/* Certificación */}
-                    <div className="lg:col-span-5 h-full">
+                    <div className="lg:col-span-3 h-full">
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}

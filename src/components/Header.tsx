@@ -18,6 +18,7 @@ export function Header() {
 
     const navLinks = [
         { name: "Inicio", href: "#" },
+        { name: "Servicios", href: "#services" },
         { name: "Experiencia", href: "#history" },
         { name: "Workflow", href: "#workflow" },
         { name: "Contacto", href: "#contact" },
@@ -35,25 +36,25 @@ export function Header() {
             >
                 <div
                     className={`relative flex items-center justify-between transition-all duration-500 rounded-2xl md:rounded-[2.5rem] px-6 md:px-10 ${scrolled
-                            ? "py-3 bg-black/40 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
-                            : "py-6 bg-transparent border border-transparent"
+                        ? "py-3 bg-black/40 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                        : "py-6 bg-transparent border border-transparent"
                         }`}
                 >
                     {/* Logo & Brand */}
-                    <Link href="/" className="flex items-center gap-3 group relative z-50">
-                        <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-xl overflow-hidden border border-white/10 group-hover:border-blue-500/50 transition-all bg-black/40 backdrop-blur-md">
+                    <Link href="/" className="flex items-center gap-2 md:gap-3 group relative z-50">
+                        <div className="relative w-8 h-8 md:w-12 md:h-12 rounded-xl overflow-hidden border border-white/10 group-hover:border-blue-500/50 transition-all bg-black/40 backdrop-blur-md">
                             <Image
                                 src="/wal-logo.png"
                                 alt="WalWeb Logo"
                                 fill
-                                className="object-contain mix-blend-screen scale-110 group-hover:scale-125 transition-transform duration-500"
+                                className="object-contain mix-blend-screen scale-110 group-hover:scale-125 transition-transform duration-500 p-1.5 md:p-3"
                             />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-lg md:text-xl font-black tracking-tighter text-white leading-none">
+                            <span className="text-base md:text-xl font-black tracking-tighter text-white leading-none">
                                 WAL<span className="text-blue-500 group-hover:text-cyan-400 transition-colors">WEB</span>
                             </span>
-                            <span className="text-[8px] uppercase tracking-[0.3em] text-gray-400 font-bold mt-1 group-hover:text-blue-400 transition-colors">Digital Studio</span>
+                            <span className="hidden md:block text-[8px] uppercase tracking-[0.3em] text-gray-400 font-bold mt-1 group-hover:text-blue-400 transition-colors">Digital Studio</span>
                         </div>
                     </Link>
 
