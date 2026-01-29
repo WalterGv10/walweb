@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://walweb.com.gt"),
   title: "WalWeb | Walter García - Soluciones Web, Redes y Arquitectura",
   description: "Portafolio profesional de Walter García. Especialista en desarrollo web con Next.js, infraestructura de redes (Cisco/Ubiquiti) y diseño arquitectónico profesional en Guatemala.",
   keywords: ["Walter Garcia", "WalWeb", "Desarrollo Web Guatemala", "Redes Cisco Ubiquiti", "Arquitectura Planos", "Sistemas de Inventario", "Soporte Bancario", "MTA Microsoft"],

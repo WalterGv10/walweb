@@ -3,21 +3,27 @@
 export function History() {
     const timeline = [
         {
+            year: "2007",
+            title: "El Origen",
+            desc: "Mi primera PC, mueble y Encarta gracias a mi madre. La inversión que lo cambió todo. ¡Infinitas gracias por creer antes que nadie! ❤️",
+            icon: "🏠",
+        },
+        {
             year: "2010",
-            title: "El Inicio",
+            title: "Primeros Pasos",
             desc: "Gestión de conectividad y servicio al cliente en Café Internet.",
             icon: "🖥️",
         },
         {
-            year: "2013",
+            year: "2012",
             title: "LEC COMPUTACIÓN",
-            desc: "Outsourcing para colegios y gobierno. Despliegue de S.O., redes y gestión crítica de servidores.",
+            desc: "Donde me certifiqué en Office, Fundamentos de Redes y Servidores. Experto en todos los S.O. de la época, CCTV y enlaces Ubiquiti. Infinitas gracias a mi mentor Selvin Argüello por impulsarme a ser un profesional, enseñándome con su ejemplo a estar siempre a la vanguardia y nunca dejar de aprender. Especialista en gestión de Windows Server 2008 R2/2012.",
             icon: "🖥️",
         },
         {
             year: "2019",
-            title: "Soporte Bancario",
-            desc: "Soporte técnico nacional híbrido para entidad bancaria líder. Infraestructura crítica.",
+            title: "Corporación Tecnológica Bancaria",
+            desc: "Soporte nacional de alto nivel a usuarios bancarios. Gestión de infraestructura crítica: WAN/LAN, telefonía IP, impresoras, CRMs y emulaciones. Administración de sistemas de cobro y plataformas sobre Windows Server 2012 y bases de datos.",
             icon: "🏦",
         },
         {
