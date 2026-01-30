@@ -4,8 +4,10 @@ import Link from "next/link";
 import { ArrowRight, Code, Layout, HardHat } from "lucide-react";
 import { BlurText } from "@/components/ui/blur-text";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Hero() {
+    const { t } = useLanguage();
     return (
         <section className="relative min-h-[100svh] lg:min-h-[600px] xl:min-h-[700px] flex flex-col items-center justify-center pt-20 pb-8 px-4 overflow-hidden">
             {/* Contenedor Principal */}
@@ -45,8 +47,8 @@ export function Hero() {
                                     15+
                                 </div>
                                 <div>
-                                    <p className="text-[6px] uppercase tracking-widest text-gray-400 font-bold">Años</p>
-                                    <p className="text-[8px] font-bold text-white uppercase">Experiencia</p>
+                                    <p className="text-[6px] uppercase tracking-widest text-gray-400 font-bold">{t.hero.role}</p>
+                                    <p className="text-[8px] font-bold text-white uppercase">{t.hero.cta_secondary}</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -68,7 +70,7 @@ export function Hero() {
                             }}
                             className="text-sm font-medium text-blue-400/90 tracking-wide flex items-center justify-center lg:justify-start gap-1"
                         >
-                            {Array.from("Hola, soy Walter Fernando GV.").map((char, index) => (
+                            {Array.from(t.hero.greeting).map((char, index) => (
                                 <motion.span
                                     key={index}
                                     variants={{
@@ -87,10 +89,10 @@ export function Hero() {
                         </motion.h2>
 
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-[1.05]">
-                            <BlurText text="Ingeniería Digital que Vende" delay={40} />
+                            <BlurText text={t.hero.title} delay={40} />
                         </h1>
                         <p className="text-sm sm:text-base text-gray-400 max-w-lg mx-auto lg:mx-0 leading-relaxed px-2">
-                            Transformamos tu visión en una herramienta digital potente. Web, automatización y presencia estratégica para destacar en el mercado.
+                            {t.hero.description}
                         </p>
                     </div>
 
@@ -99,14 +101,14 @@ export function Hero() {
                             href="/contacto"
                             className="px-6 py-3.5 bg-white text-black font-black rounded-xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.4)] text-sm"
                         >
-                            Iniciar Proyecto
+                            {t.hero.cta_primary}
                             <ArrowRight className="ml-2 w-4 h-4" />
                         </Link>
                         <Link
                             href="/trayectoria"
                             className="px-6 py-3.5 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl border border-white/10 backdrop-blur-md transition-all flex items-center justify-center text-sm"
                         >
-                            Trayectoria
+                            {t.hero.cta_secondary}
                         </Link>
                     </div>
 
@@ -114,15 +116,15 @@ export function Hero() {
                     <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-6 border-t border-white/5">
                         <div className="flex items-center gap-2 text-gray-400">
                             <Code size={14} className="text-purple-500" />
-                            <span className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-purple-300/80">Web Dev</span>
+                            <span className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-purple-300/80">{t.hero.badges.web}</span>
                         </div>
                         <div className="flex items-center gap-2 text-gray-400">
                             <Layout size={14} className="text-blue-500" />
-                            <span className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-blue-300/80">Sistemas UI</span>
+                            <span className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-blue-300/80">{t.hero.badges.ui}</span>
                         </div>
                         <div className="flex items-center gap-2 text-gray-400">
                             <HardHat size={14} className="text-cyan-500" />
-                            <span className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-cyan-300/80">Arquitectura</span>
+                            <span className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-cyan-300/80">{t.hero.badges.arch}</span>
                         </div>
                     </div>
                 </div>

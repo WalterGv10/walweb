@@ -1,9 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
-import { Mail, MessageSquare, Linkedin, Youtube, Music2 } from "lucide-react";
+import { Mail, MessageSquare, Linkedin, Youtube, Music2, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Contact() {
+    const { t } = useLanguage();
     const satellites = [
         {
             icon: <Mail size={24} />,
@@ -62,10 +65,10 @@ export function Contact() {
 
             <div className="relative z-10 text-center mb-8 md:mb-20">
                 <h2 className="text-3xl md:text-6xl font-black text-white tracking-tighter mb-2 md:mb-3">
-                    CONECTA <span className="text-blue-500">AHORA</span>
+                    {t.contact.title} <span className="text-blue-500">{t.contact.title_highlight}</span>
                 </h2>
                 <p className="text-slate-400 text-[10px] md:text-sm font-medium uppercase tracking-[0.3em] md:tracking-[0.3em]">
-                    Un clic para empezar
+                    {t.contact.subtitle}
                 </p>
             </div>
 

@@ -5,6 +5,7 @@ import LightPillar from "@/components/LightPillar";
 import { Header } from "@/components/Header";
 import JsonLd from "@/components/JsonLd";
 import { StarField } from "@/components/ui/StarField";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -89,11 +90,13 @@ export default function RootLayout({
         {/* Stars Effect */}
         <StarField />
 
-        <Header />
-        <main className="relative z-10 w-full h-full">
-          {children}
-        </main>
-        <JsonLd />
+        <LanguageProvider>
+          <Header />
+          <main className="relative z-10 w-full h-full">
+            {children}
+          </main>
+          <JsonLd />
+        </LanguageProvider>
       </body>
     </html>
   );

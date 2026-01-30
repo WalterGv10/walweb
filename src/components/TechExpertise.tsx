@@ -1,41 +1,23 @@
 "use client";
 import { motion } from "framer-motion";
 import { Server, ShieldCheck, CheckCircle2, Globe, Cpu } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function TechExpertise() {
+    const { t } = useLanguage();
+
     const expertise = [
         {
-            category: "Sistemas",
+            ...t.tech_expertise.items.systems,
             icon: <Server className="text-blue-400" />,
-            skills: [
-                "Clonación & Despliegue S.O.",
-                "Virtualización de Entornos",
-                "Active Directory & Dominios",
-                "Optimización Registro Win",
-                "Gestión DNS & DHCP"
-            ]
         },
         {
-            category: "Redes",
+            ...t.tech_expertise.items.networks,
             icon: <Globe className="text-cyan-400" />,
-            skills: [
-                "Protocolos TCP/IP & LAN",
-                "Configuración Firewalls",
-                "Cableado Estructurado",
-                "Infraestructura Cisco/Ubiquiti",
-                "Seguridad & Antivirus"
-            ]
         },
         {
-            category: "Web Arch",
+            ...t.tech_expertise.items.web,
             icon: <Cpu className="text-indigo-400" />,
-            skills: [
-                "Next.js & React Core",
-                "Tailwind CSS Expert",
-                "TypeScript & JS ES6+",
-                "Astro & Angular Dev",
-                "Performance Optimization"
-            ]
         }
     ];
 
@@ -50,10 +32,10 @@ export function TechExpertise() {
                     className="text-center space-y-2"
                 >
                     <h2 className="text-3xl lg:text-4xl font-black text-white tracking-tighter">
-                        Experticia <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">Verificada</span>
+                        {t.tech_expertise.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">{t.tech_expertise.title_highlight}</span>
                     </h2>
                     <p className="text-gray-400 text-xs lg:text-base max-w-2xl mx-auto">
-                        Infraestructura real respaldada por Microsoft.
+                        {t.tech_expertise.subtitle}
                     </p>
                 </motion.div>
 
@@ -76,7 +58,7 @@ export function TechExpertise() {
                                         <h3 className="text-base font-bold text-white">{group.category}</h3>
                                     </div>
                                     <ul className="space-y-2">
-                                        {group.skills.map((skill, si) => (
+                                        {group.skills.map((skill: string, si: number) => (
                                             <li key={si} className="flex items-center gap-2 text-xs text-gray-400">
                                                 <CheckCircle2 size={12} className="text-blue-500/50 shrink-0" />
                                                 <span className="truncate">{skill}</span>
@@ -99,29 +81,29 @@ export function TechExpertise() {
                                 <div className="space-y-3">
                                     <div className="flex justify-between items-center">
                                         <span className="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 text-[8px] font-bold uppercase tracking-widest border border-blue-500/30">
-                                            Microsoft Official
+                                            {t.tech_expertise.certification.label}
                                         </span>
                                         <ShieldCheck className="text-blue-500 w-5 h-5" />
                                     </div>
                                     <div>
-                                        <h3 className="text-lg lg:text-xl font-black text-white leading-tight">MTA: Networking</h3>
-                                        <p className="text-gray-400 text-[10px] lg:text-xs">Examen 98-366. Seguridad y Redes.</p>
+                                        <h3 className="text-lg lg:text-xl font-black text-white leading-tight">{t.tech_expertise.certification.title}</h3>
+                                        <p className="text-gray-400 text-[10px] lg:text-xs">{t.tech_expertise.certification.description}</p>
                                     </div>
 
                                     <div className="grid grid-cols-2 gap-2">
                                         <div className="p-2 lg:p-3 rounded-xl bg-white/5 border border-white/10">
-                                            <p className="text-[8px] text-gray-500 uppercase">ID Verif.</p>
+                                            <p className="text-[8px] text-gray-500 uppercase">{t.tech_expertise.certification.id_label}</p>
                                             <p className="text-[10px] lg:text-xs font-mono text-blue-400">2RP-NUXA</p>
                                         </div>
                                         <div className="p-2 lg:p-3 rounded-xl bg-white/5 border border-white/10">
-                                            <p className="text-[8px] text-gray-500 uppercase">Fecha</p>
-                                            <p className="text-[10px] lg:text-xs font-mono text-blue-400">Nov 2014</p>
+                                            <p className="text-[8px] text-gray-500 uppercase">{t.tech_expertise.certification.date_label}</p>
+                                            <p className="text-[10px] lg:text-xs font-mono text-blue-400">{t.tech_expertise.certification.date_value}</p>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="mt-4 p-2 rounded-lg bg-blue-500/10 border border-blue-500/20 text-center">
-                                    <p className="text-[9px] text-blue-300 italic">"Infraestructura sólida para soluciones escalables."</p>
+                                    <p className="text-[9px] text-blue-300 italic">{t.tech_expertise.certification.quote}</p>
                                 </div>
                             </div>
                         </motion.div>

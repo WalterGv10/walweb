@@ -1,8 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import { User, Users, Heart } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function PersonalStats() {
+    const { t } = useLanguage();
+
     return (
         <section className="py-12 md:py-20 px-4 relative z-10 overflow-hidden">
             <div className="max-w-5xl mx-auto">
@@ -24,12 +27,11 @@ export function PersonalStats() {
                                 <User size={20} className="md:size-6" />
                             </div>
                             <div>
-                                <h3 className="text-4xl md:text-5xl font-black text-white tracking-tighter">31 <span className="text-lg font-light text-gray-500">Años</span></h3>
-                                <p className="text-blue-400 font-bold tracking-widest uppercase text-[10px] mt-1">Sistemas Operativos & Experiencia</p>
+                                <h3 className="text-4xl md:text-5xl font-black text-white tracking-tighter">{t.personal_stats.card1.title_number} <span className="text-lg font-light text-gray-500">{t.personal_stats.card1.title_text}</span></h3>
+                                <p className="text-blue-400 font-bold tracking-widest uppercase text-[10px] mt-1">{t.personal_stats.card1.subtitle}</p>
                             </div>
                             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-                                En el punto óptimo donde la energía converge con la madurez técnica.
-                                Tres décadas de evolución profesional en el mundo digital.
+                                {t.personal_stats.card1.desc}
                             </p>
                         </div>
                         <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-600 to-cyan-400 w-[31%]" />
@@ -52,12 +54,11 @@ export function PersonalStats() {
                                 <Heart size={20} className="md:size-6 fill-cyan-400/20" />
                             </div>
                             <div>
-                                <h3 className="text-4xl md:text-5xl font-black text-white tracking-tighter">2 <span className="text-lg font-light text-gray-500">Gemelos (4 años)</span></h3>
-                                <p className="text-cyan-400 font-bold tracking-widest uppercase text-[10px] mt-1">Arquitectura Dual & Multitasking</p>
+                                <h3 className="text-4xl md:text-5xl font-black text-white tracking-tighter">{t.personal_stats.card2.title_number} <span className="text-lg font-light text-gray-500">{t.personal_stats.card2.title_text}</span></h3>
+                                <p className="text-cyan-400 font-bold tracking-widest uppercase text-[10px] mt-1">{t.personal_stats.card2.subtitle}</p>
                             </div>
                             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-                                Padre orgulloso de un "Dual Core" de energía inagotable. Gestionar gemelos
-                                me ha dado el doctorado en resolución de problemas bajo presión.
+                                {t.personal_stats.card2.desc}
                             </p>
                         </div>
                         <div className="absolute bottom-4 right-8 flex gap-2">

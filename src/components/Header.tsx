@@ -4,11 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+    const { t } = useLanguage();
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -17,11 +20,10 @@ export function Header() {
     }, []);
 
     const navLinks = [
-        { name: "Inicio", href: "/" },
-        { name: "Servicios", href: "/servicios" },
-        { name: "Mundial 2026", href: "/mundial" },
-        { name: "Trayectoria", href: "/trayectoria" },
-        { name: "Contacto", href: "/contacto" },
+        { name: t.header.nav.services, href: "/servicios" },
+        { name: t.header.nav.worldcup, href: "/mundial" },
+        { name: t.header.nav.trajectory, href: "/trayectoria" },
+        { name: t.header.nav.contact, href: "/contacto" },
     ];
 
     return (
@@ -85,13 +87,14 @@ export function Header() {
 
                     {/* CTA Button */}
                     <div className="hidden md:flex items-center gap-4">
+                        <LanguageSwitcher />
                         <Link
                             href="/contacto"
                             className="group relative px-6 py-2.5 rounded-full bg-blue-600 overflow-hidden transition-all hover:scale-105 active:scale-95"
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                             <span className="relative flex items-center gap-2 text-sm font-black text-white uppercase tracking-widest">
-                                Consultoría
+                                {t.header.cta}
                                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                             </span>
                         </Link>
@@ -102,7 +105,8 @@ export function Header() {
                         className={`md:hidden p-2 rounded-xl transition-colors ${mobileMenuOpen ? 'bg-white/10' : 'bg-transparent'}`}
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     >
-                        {mobileMenuOpen ? <X size={24} className="text-white" /> : <Menu size={24} className="text-white" />}
+                        <LanguageSwitcher />
+                        {mobileMenuOpen ? <X size={24} className="text-white ml-2" /> : <Menu size={24} className="text-white ml-2" />}
                     </button>
                 </div>
             </motion.div>

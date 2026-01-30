@@ -1,31 +1,22 @@
 "use client";
 import { motion } from "framer-motion";
 import { Box, FileText, Map as MapIcon, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function ArchWorkflow() {
-    const steps = [
-        {
-            title: "Modelación 3D",
-            tool: "Software Web 3D",
-            desc: "Visualización espacial completa mediante modelado avanzado.",
-            icon: <Box className="text-blue-400" size={24} />,
-            color: "blue"
-        },
-        {
-            title: "Informe Detallado",
-            tool: "Microsoft Office Pro",
-            desc: "Documentación técnica exhaustiva para una gestión clara.",
-            icon: <FileText className="text-cyan-400" size={24} />,
-            color: "cyan"
-        },
-        {
-            title: "Planos de Ejecución",
-            tool: "AutoCAD Expert",
-            desc: "Planos precisos listos para que el albañil ejecute sin errores.",
-            icon: <MapIcon className="text-blue-500" size={24} />,
-            color: "blue"
-        }
+    const { t } = useLanguage();
+
+    const stepsData = t.arch_workflow.steps;
+    const icons = [
+        <Box className="text-blue-400" size={24} key="box" />,
+        <FileText className="text-cyan-400" size={24} key="file" />,
+        <MapIcon className="text-blue-500" size={24} key="map" />
     ];
+
+    const steps = stepsData.map((step, index) => ({
+        ...step,
+        icon: icons[index]
+    }));
 
     return (
         <section id="workflow" className="py-16 md:py-24 px-4 relative z-10 overflow-hidden">
@@ -39,10 +30,10 @@ export function ArchWorkflow() {
                 >
                     <div className="space-y-3 md:space-y-4 text-center md:text-left w-full md:w-auto">
                         <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter">
-                            Workflow <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">Arquitectónico</span>
+                            {t.arch_workflow.title_part1} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">{t.arch_workflow.title_highlight}</span>
                         </h2>
                         <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto md:mx-0">
-                            Transformo conceptos en realidades construibles mediante un proceso técnico riguroso.
+                            {t.arch_workflow.description}
                         </p>
                     </div>
                 </motion.div>
@@ -80,7 +71,7 @@ export function ArchWorkflow() {
                             {index < steps.length - 1 && (
                                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 md:-bottom-auto md:left-auto md:-right-4 md:top-1/2 md:-translate-y-1/2 z-20">
                                     <div className="p-1.5 md:p-2 rounded-full bg-blue-600 shadow-lg shadow-blue-500/50 rotate-90 md:rotate-0">
-                                        <ArrowRight size={14} className="text-white" />
+                                        <ArrowRight size={14} className="text-white bg-transparent" />
                                     </div>
                                 </div>
                             )}
@@ -95,7 +86,7 @@ export function ArchWorkflow() {
                     className="mt-12 md:mt-16 p-6 md:p-8 rounded-2xl md:rounded-3xl bg-gradient-to-r from-blue-600/10 to-transparent border border-blue-500/20 text-center"
                 >
                     <p className="text-blue-300 text-xs md:text-sm font-medium italic px-2">
-                        "Del modelo 3D al plano en mano: precisión garantizada para el personal de obra."
+                        {t.arch_workflow.quote}
                     </p>
                 </motion.div>
             </div>

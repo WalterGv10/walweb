@@ -2,37 +2,33 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TrendingUp, Cpu, Globe, ChevronDown, CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function StrategicVision() {
     const [activeTab, setActiveTab] = useState<number | null>(0);
+    const { t } = useLanguage();
 
     const contextItems = [
         {
-            title: "Entorno Económico 2026",
+            ...t.strategic_vision.items.economic,
             icon: <TrendingUp className="w-6 h-6" />,
             color: "text-blue-400",
             bg: "bg-blue-500/20",
             border: "border-blue-500/30",
-            summary: "Costos suben, la tecnología ahorra.",
-            details: "El salario mínimo sube y contratar personal es más caro. La tecnología ya no es un lujo, es la única forma de que tu negocio funcione mejor con menos gastos. Creamos sistemas que hacen el trabajo repetitivo por ti."
         },
         {
-            title: "Revolución GEO (IA)",
+            ...t.strategic_vision.items.geo,
             icon: <Cpu className="w-6 h-6" />,
             color: "text-cyan-400",
             bg: "bg-cyan-500/20",
             border: "border-cyan-500/30",
-            summary: "Aparece cuando le preguntan a la IA.",
-            details: "La gente ya no busca en Google, le pregunta a la Inteligencia Artificial. Si tu negocio no está optimizado para esto, eres invisible. Hacemos que la IA recomiende tu marca cuando alguien busque tus servicios."
         },
         {
-            title: "Oportunidad Mundial",
+            ...t.strategic_vision.items.opportunity,
             icon: <Globe className="w-6 h-6" />,
             color: "text-indigo-400",
             bg: "bg-indigo-500/20",
             border: "border-indigo-500/30",
-            summary: "El Mundial 2026 venderá por ti.",
-            details: "El Mundial será en nuestro horario. Aprovechamos la fiebre del fútbol para crear promociones, quinielas y menús digitales que atraigan clientes a tu negocio durante los partidos."
         }
     ];
 
@@ -58,7 +54,7 @@ export function StrategicVision() {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
                             </span>
-                            <span className="text-xs font-bold text-slate-300 tracking-widest uppercase">Visión Estratégica</span>
+                            <span className="text-xs font-bold text-slate-300 tracking-widest uppercase">{t.strategic_vision.label}</span>
                         </motion.div>
 
                         <div className="space-y-4">
@@ -68,8 +64,8 @@ export function StrategicVision() {
                                 viewport={{ once: true }}
                                 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[1.1]"
                             >
-                                No es solo una web. <br />
-                                Es tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400">ventaja injusta.</span>
+                                {t.strategic_vision.title_part1} <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400">{t.strategic_vision.title_highlight}</span>
                             </motion.h2>
 
                             <motion.p
@@ -79,7 +75,7 @@ export function StrategicVision() {
                                 transition={{ delay: 0.2 }}
                                 className="text-lg text-slate-400 leading-relaxed max-w-lg"
                             >
-                                En 2026, la "presencia digital" no sirve si no factura. Transformamos tu tecnología en un activo que ahorra costos, atrae tráfico IA y vende mientras duermes.
+                                {t.strategic_vision.description}
                             </motion.p>
                         </div>
 
@@ -90,7 +86,7 @@ export function StrategicVision() {
                             transition={{ delay: 0.4 }}
                             className="flex flex-wrap gap-4 pt-4"
                         >
-                            {["Automatización", "SEO para IA", "Ventas B2B"].map((tag, i) => (
+                            {t.strategic_vision.tags.map((tag: string, i: number) => (
                                 <span key={i} className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-medium text-slate-400">
                                     {tag}
                                 </span>

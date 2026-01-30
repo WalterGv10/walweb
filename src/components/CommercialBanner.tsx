@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Star, Zap, Shield, Rocket, Check, Globe, HardHat, Network, ClipboardList, Cpu, TrendingUp, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function CommercialBanner() {
     const containerRef = useRef(null);
@@ -10,6 +11,7 @@ export function CommercialBanner() {
         target: containerRef,
         offset: ["start end", "end start"]
     });
+    const { t } = useLanguage();
 
     const y3 = useTransform(scrollYProgress, [0, 1], [0, -100]); // Renamed to avoid collision if any
     const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
@@ -56,10 +58,10 @@ export function CommercialBanner() {
                                 whileInView={{ x: 0, opacity: 1 }}
                                 className="space-y-1"
                             >
-                                <p className="text-xs md:text-sm font-black text-blue-400 tracking-[0.3em] uppercase">WalWeb Premium</p>
+                                <p className="text-xs md:text-sm font-black text-blue-400 tracking-[0.3em] uppercase">{t.commercial_banner.badge_title}</p>
                                 <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[9px] font-bold text-blue-300 tracking-wider uppercase">
                                     <Sparkles size={11} className="animate-pulse" />
-                                    Servicios Exclusivos 2026
+                                    {t.commercial_banner.badge_text}
                                 </div>
                             </motion.div>
                         </div>
@@ -70,9 +72,9 @@ export function CommercialBanner() {
                                 whileInView={{ y: 0, opacity: 1 }}
                                 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-[0.9]"
                             >
-                                IMPULSA TU <br className="hidden lg:block" /> NEGOCIO AL <br />
+                                {t.commercial_banner.title_part1} <br className="hidden lg:block" /> {t.commercial_banner.title_part2} <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-white/90 italic pr-2">
-                                    NIVEL ÉLITE
+                                    {t.commercial_banner.title_highlight}
                                 </span>
                             </motion.h2>
 
@@ -82,7 +84,7 @@ export function CommercialBanner() {
                                 transition={{ delay: 0.1 }}
                                 className="text-gray-400 text-base lg:text-lg max-w-xl font-light leading-relaxed mx-auto lg:mx-0"
                             >
-                                Fusionando ingeniería estructural, conectividad de vanguardia y arquitectura digital para crear ecosistemas de alto rendimiento.
+                                {t.commercial_banner.description}
                             </motion.p>
                         </div>
 
@@ -94,9 +96,9 @@ export function CommercialBanner() {
                             className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4"
                         >
                             {[
-                                { icon: <Zap size={14} />, text: "VELOCIDAD" },
-                                { icon: <Shield size={14} />, text: "SEGURIDAD" },
-                                { icon: <Rocket size={14} />, text: "ESCALABILIDAD" }
+                                { icon: <Zap size={14} />, text: t.commercial_banner.tags.speed },
+                                { icon: <Shield size={14} />, text: t.commercial_banner.tags.security },
+                                { icon: <Rocket size={14} />, text: t.commercial_banner.tags.scalability }
                             ].map((item, i) => (
                                 <div key={i} className="flex items-center gap-2.5 px-5 py-2 rounded-xl bg-white/5 border border-white/5 text-gray-400 hover:text-white hover:border-blue-500/30 transition-all cursor-default">
                                     <span className="text-blue-500">{item.icon}</span>
@@ -130,8 +132,8 @@ export function CommercialBanner() {
                                         </div>
                                     </div>
                                     <div className="space-y-2">
-                                        <h3 className="text-xl lg:text-3xl font-black text-white tracking-tight uppercase">Web Architecture</h3>
-                                        <p className="text-xs lg:text-sm text-gray-400 max-w-sm font-medium">Arquitecturas vanguardistas con alto rendimiento y escalabilidad global.</p>
+                                        <h3 className="text-xl lg:text-3xl font-black text-white tracking-tight uppercase">{t.commercial_banner.cards.web_arch.title}</h3>
+                                        <p className="text-xs lg:text-sm text-gray-400 max-w-sm font-medium">{t.commercial_banner.cards.web_arch.desc}</p>
                                     </div>
 
                                     {/* Tech Stack Horizontal List */}
@@ -167,7 +169,7 @@ export function CommercialBanner() {
 
                                 {/* Social Proof: Global Giants */}
                                 <div className="pt-6 mt-4 border-t border-white/5 flex flex-col gap-3">
-                                    <p className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">Tecnología en el corazón de:</p>
+                                    <p className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">{t.commercial_banner.cards.web_arch.label}</p>
                                     <div className="flex flex-wrap items-center gap-x-6 gap-y-4 opacity-70 grayscale hover:grayscale-0 transition-all duration-700">
                                         {[
                                             { name: "Netflix", icon: "netflix" },
@@ -203,8 +205,8 @@ export function CommercialBanner() {
                                     <HardHat size={32} />
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-black text-white tracking-tight uppercase leading-tight">Professional<br />Architecture</h3>
-                                    <p className="text-xs text-gray-500 mt-3 font-medium uppercase tracking-widest">Structural Design</p>
+                                    <h3 className="text-xl font-black text-white tracking-tight uppercase leading-tight" dangerouslySetInnerHTML={{ __html: t.commercial_banner.cards.pro_arch.title.replace(' ', '<br/>') }}></h3>
+                                    <p className="text-xs text-gray-500 mt-3 font-medium uppercase tracking-widest">{t.commercial_banner.cards.pro_arch.desc}</p>
                                 </div>
                             </motion.div>
 
@@ -220,16 +222,16 @@ export function CommercialBanner() {
                                     <Network size={28} />
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-black text-white tracking-tight uppercase">Enterprise Networks</h3>
-                                    <p className="text-xs text-gray-500">Cisco & Ubiquiti Core Infrastructure</p>
+                                    <h3 className="text-lg font-black text-white tracking-tight uppercase">{t.commercial_banner.cards.networks.title}</h3>
+                                    <p className="text-xs text-gray-500">{t.commercial_banner.cards.networks.desc}</p>
                                 </div>
                             </motion.div>
 
                             {/* Card 4: Small Accents (Grid of 2 icons) */}
                             <div className="md:col-span-6 flex gap-4 mt-2">
                                 {[
-                                    { icon: <TrendingUp size={20} />, title: "Digital Mkt", color: "text-cyan-400" },
-                                    { icon: <Cpu size={20} />, title: "Consultancy", color: "text-blue-400" }
+                                    { icon: <TrendingUp size={20} />, title: t.commercial_banner.cards.digital_mkt, color: "text-cyan-400" },
+                                    { icon: <Cpu size={20} />, title: t.commercial_banner.cards.consultancy, color: "text-blue-400" }
                                 ].map((item, i) => (
                                     <motion.div
                                         key={i}

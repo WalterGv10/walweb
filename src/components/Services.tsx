@@ -1,10 +1,49 @@
 "use client";
+
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import { servicesData } from "@/data/services";
+import { ArrowUpRight, Music2, Store, Truck, Smartphone, Trophy, MapPin } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import Link from "next/link";
+import React from "react";
+
+interface ServiceItem {
+    title: string;
+    desc: string;
+    tags: string[];
+    icon: React.ReactNode;
+    highlight?: boolean;
+}
 
 export function Services() {
-    const services = servicesData;
+    const { t } = useLanguage();
+
+    const servicesList: ServiceItem[] = [
+        {
+            ...t.services.items.music,
+            icon: <Music2 className="text-white" size={32} />,
+            highlight: true
+        },
+        {
+            ...t.services.items.local,
+            icon: <Store className="text-blue-400" size={32} />,
+        },
+        {
+            ...t.services.items.rentals,
+            icon: <Truck className="text-orange-400" size={32} />,
+        },
+        {
+            ...t.services.items.influencers,
+            icon: <Smartphone className="text-pink-500" size={32} />,
+        },
+        {
+            ...t.services.items.worldcup,
+            icon: <Trophy className="text-yellow-400" size={32} />,
+        },
+        {
+            ...t.services.items.ai,
+            icon: <MapPin className="text-green-400" size={32} />,
+        }
+    ];
 
     return (
         <section id="servicios" className="py-24 px-4 relative z-10 bg-black/40">
@@ -28,7 +67,7 @@ export function Services() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-                    {services.map((service, index) => (
+                    {servicesList.map((service, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
@@ -36,71 +75,68 @@ export function Services() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                             className={`group relative p-8 rounded-3xl transition-all duration-500 hover:-translate-y-2 
-                                ${/* @ts-ignore */
-                                service.highlight
+                                ${service.highlight
                                     ? "bg-gradient-to-br from-purple-900/60 via-slate-900/80 to-black border border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.2)] md:col-span-2 lg:col-span-1"
                                     : "bg-white/[0.03] border border-white/10 hover:border-blue-500/50 hover:bg-white/[0.08] hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
-                                }`
-                            }
+                                }`}
                         >
-                            {/* @ts-ignore */
-                                service.highlight ? (
-                                    <>
-                                        <div className="absolute inset-0 bg-purple-500/10 blur-[50px] rounded-full pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity" />
-                                        <div className="relative z-10 flex flex-col h-full justify-between">
-                                            <div>
-                                                <div className="flex justify-between items-start mb-6">
-                                                    <div className="p-3 rounded-2xl bg-purple-500 text-white shadow-[0_0_15px_rgba(168,85,247,0.4)] ring-1 ring-purple-400/50">
-                                                        {service.icon}
-                                                    </div>
-                                                    <div className="px-3 py-1 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-[10px] font-black uppercase tracking-widest">
-                                                        Special Focus
-                                                    </div>
+                            {service.highlight ? (
+                                <>
+                                    <div className="absolute inset-0 bg-purple-500/10 blur-[50px] rounded-full pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity" />
+                                    <div className="relative z-10 flex flex-col h-full justify-between">
+                                        <div>
+                                            <div className="flex justify-between items-start mb-6">
+                                                <div className="p-3 rounded-2xl bg-purple-500 text-white shadow-[0_0_15px_rgba(168,85,247,0.4)] ring-1 ring-purple-400/50">
+                                                    {service.icon}
                                                 </div>
-
-                                                <h3 className="text-2xl font-black text-white mb-3 tracking-tight">{service.title}</h3>
-                                                <p className="text-slate-300 text-sm leading-relaxed mb-6 font-medium">
-                                                    {service.desc}
-                                                </p>
-                                            </div>
-
-                                            <div className="space-y-4">
-                                                <div className="flex flex-wrap gap-2">
-                                                    {service.tags.map((tag, tIndex) => (
-                                                        <span key={tIndex} className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-200 border border-purple-500/20">
-                                                            {tag}
-                                                        </span>
-                                                    ))}
+                                                <div className="px-3 py-1 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-[10px] font-black uppercase tracking-widest">
+                                                    Special Focus
                                                 </div>
-                                                <a href="#contact" className="flex items-center gap-2 text-xs font-bold text-purple-400 hover:text-purple-300 transition-colors uppercase tracking-widest">
-                                                    Let's Collab <ArrowUpRight size={14} />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </>
-                                ) : (
-                                    <>
-                                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        <div className="relative z-10">
-                                            <div className="mb-6 p-4 rounded-2xl bg-white/5 w-fit group-hover:scale-110 transition-transform duration-300 ring-1 ring-white/10">
-                                                {service.icon}
                                             </div>
 
-                                            <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                                            <p className="text-gray-400 text-sm leading-relaxed mb-6 h-auto min-h-[40px]">
+                                            <h3 className="text-2xl font-black text-white mb-3 tracking-tight">{service.title}</h3>
+                                            <p className="text-slate-300 text-sm leading-relaxed mb-6 font-medium">
                                                 {service.desc}
                                             </p>
+                                        </div>
 
-                                            <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+                                        <div className="space-y-4">
+                                            <div className="flex flex-wrap gap-2">
                                                 {service.tags.map((tag, tIndex) => (
-                                                    <span key={tIndex} className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/5 text-gray-300 border border-white/10">
+                                                    <span key={tIndex} className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-200 border border-purple-500/20">
                                                         {tag}
                                                     </span>
                                                 ))}
                                             </div>
+                                            <Link href="/contacto" className="flex items-center gap-2 text-xs font-bold text-purple-400 hover:text-purple-300 transition-colors uppercase tracking-widest">
+                                                Let's Collab <ArrowUpRight size={14} />
+                                            </Link>
                                         </div>
-                                    </>
-                                )}
+                                    </div>
+                                </>
+                            ) : (
+                                <>
+                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    <div className="relative z-10">
+                                        <div className="mb-6 p-4 rounded-2xl bg-white/5 w-fit group-hover:scale-110 transition-transform duration-300 ring-1 ring-white/10">
+                                            {service.icon}
+                                        </div>
+
+                                        <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                                        <p className="text-gray-400 text-sm leading-relaxed mb-6 h-auto min-h-[40px]">
+                                            {service.desc}
+                                        </p>
+
+                                        <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+                                            {service.tags.map((tag, tIndex) => (
+                                                <span key={tIndex} className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/5 text-gray-300 border border-white/10">
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </>
+                            )}
                         </motion.div>
                     ))}
                 </div>

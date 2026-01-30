@@ -1,54 +1,22 @@
 "use client";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function History() {
-    const timeline = [
-        {
-            year: "2007",
-            title: "El Origen",
-            desc: "Mi primera PC, mueble y Encarta gracias a mi madre. La inversión que lo cambió todo. ¡Infinitas gracias por creer antes que nadie! ❤️",
-            icon: "🏠",
-        },
-        {
-            year: "2010",
-            title: "Primeros Pasos",
-            desc: "Gestión de conectividad y servicio al cliente en Café Internet.",
-            icon: "🖥️",
-        },
-        {
-            year: "2012",
-            title: "LEC COMPUTACIÓN",
-            desc: "Donde me certifiqué en Office, Fundamentos de Redes y Servidores. Experto en todos los S.O. de la época, CCTV y enlaces Ubiquiti. Infinitas gracias a mi mentor Selvin Argüello por impulsarme a ser un profesional, enseñándome con su ejemplo a estar siempre a la vanguardia y nunca dejar de aprender. Especialista en gestión de Windows Server 2008 R2/2012.",
-            icon: "🖥️",
-        },
-        {
-            year: "2019",
-            title: "Corporación Tecnológica Bancaria",
-            desc: "Soporte nacional de alto nivel a usuarios bancarios. Gestión de infraestructura crítica: WAN/LAN, telefonía IP, impresoras, CRMs y emulaciones. Administración de sistemas de cobro y plataformas sobre Windows Server 2012 y bases de datos.",
-            icon: "🏦",
-        },
-        {
-            year: "2022",
-            title: "Especialista ATM",
-            desc: "Reparación y mantenimiento de cajeros automáticos a nivel nacional bajo altos estándares.",
-            icon: "💳",
-        },
-        {
-            year: "Presente",
-            title: "WalWeb & Arch",
-            desc: "Fusionando tecnología y arquitectura. Soluciones digitales y planos profesionales.",
-            icon: "🏗️",
-        },
-    ];
+    const { t } = useLanguage();
+
+    // Map content from dictionary, keeping icons logic if static or from dictionary
+    // Dictionary has icon as string, so we can use it directly
+    const timeline = t.history.timeline;
 
     return (
         <section id="history" className="py-16 md:py-24 px-4 relative z-10">
             <div className="max-w-4xl mx-auto space-y-10 md:space-y-16">
                 <div className="text-center space-y-3 md:space-y-4">
                     <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                        Trayectoria
+                        {t.history.title}
                     </h2>
                     <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto px-4">
-                        Evolución técnica constante: de la conectividad local al soporte bancario nacional.
+                        {t.history.subtitle}
                     </p>
                 </div>
 
