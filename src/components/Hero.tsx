@@ -97,7 +97,7 @@ export function Hero() {
                     <div className="flex flex-col sm:flex-row gap-3 pt-2 px-6 sm:px-0 justify-center lg:justify-start">
                         <Link
                             href="/contacto"
-                            className="px-6 py-3.5 bg-white text-black font-bold rounded-xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center shadow-xl text-sm"
+                            className="px-6 py-3.5 bg-white text-black font-black rounded-xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.4)] text-sm"
                         >
                             Iniciar Proyecto
                             <ArrowRight className="ml-2 w-4 h-4" />
@@ -113,16 +113,16 @@ export function Hero() {
                     {/* Skill Badges */}
                     <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-6 border-t border-white/5">
                         <div className="flex items-center gap-2 text-gray-400">
-                            <Code size={14} className="text-blue-500" />
-                            <span className="text-[10px] sm:text-xs font-medium uppercase tracking-widest">Web Dev</span>
+                            <Code size={14} className="text-purple-500" />
+                            <span className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-purple-300/80">Web Dev</span>
                         </div>
                         <div className="flex items-center gap-2 text-gray-400">
                             <Layout size={14} className="text-blue-500" />
-                            <span className="text-[10px] sm:text-xs font-medium uppercase tracking-widest">Sistemas UI</span>
+                            <span className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-blue-300/80">Sistemas UI</span>
                         </div>
                         <div className="flex items-center gap-2 text-gray-400">
-                            <HardHat size={14} className="text-blue-500" />
-                            <span className="text-[10px] sm:text-xs font-medium uppercase tracking-widest">Arquitectura</span>
+                            <HardHat size={14} className="text-cyan-500" />
+                            <span className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-cyan-300/80">Arquitectura</span>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { TrendingUp, Cpu, Globe, ArrowRight, ChevronDown } from "lucide-react";
+import { TrendingUp, Cpu, Globe, ChevronDown, CheckCircle2 } from "lucide-react";
 
 export function StrategicVision() {
     const [activeTab, setActiveTab] = useState<number | null>(0);
@@ -9,114 +9,158 @@ export function StrategicVision() {
     const contextItems = [
         {
             title: "Entorno Económico 2026",
-            icon: <TrendingUp className="text-blue-400" />,
+            icon: <TrendingUp className="w-6 h-6" />,
+            color: "text-blue-400",
+            bg: "bg-blue-500/20",
+            border: "border-blue-500/30",
             summary: "Costos suben, la tecnología ahorra.",
             details: "El salario mínimo sube y contratar personal es más caro. La tecnología ya no es un lujo, es la única forma de que tu negocio funcione mejor con menos gastos. Creamos sistemas que hacen el trabajo repetitivo por ti."
         },
         {
             title: "Revolución GEO (IA)",
-            icon: <Cpu className="text-cyan-400" />,
+            icon: <Cpu className="w-6 h-6" />,
+            color: "text-cyan-400",
+            bg: "bg-cyan-500/20",
+            border: "border-cyan-500/30",
             summary: "Aparece cuando le preguntan a la IA.",
             details: "La gente ya no busca en Google, le pregunta a la Inteligencia Artificial. Si tu negocio no está optimizado para esto, eres invisible. Hacemos que la IA recomiende tu marca cuando alguien busque tus servicios."
         },
         {
             title: "Oportunidad Mundial",
-            icon: <Globe className="text-indigo-400" />,
+            icon: <Globe className="w-6 h-6" />,
+            color: "text-indigo-400",
+            bg: "bg-indigo-500/20",
+            border: "border-indigo-500/30",
             summary: "El Mundial 2026 venderá por ti.",
             details: "El Mundial será en nuestro horario. Aprovechamos la fiebre del fútbol para crear promociones, quinielas y menús digitales que atraigan clientes a tu negocio durante los partidos."
         }
     ];
 
     return (
-        <section className="py-20 px-4 relative z-10 bg-black/20">
-            <div className="max-w-6xl mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className="py-24 px-4 relative z-10 overflow-hidden">
+            {/* Background elements */}
+            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-                    {/* Texto Introductorio */}
-                    <div className="space-y-6">
+            <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+                    {/* Left Column: Strategic Narrative */}
+                    <div className="space-y-8 relative">
+                        <div className="absolute -left-8 top-0 w-1 h-full bg-gradient-to-b from-blue-500/0 via-blue-500/20 to-blue-500/0 hidden lg:block" />
+
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20"
+                            className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 backdrop-blur-md shadow-sm"
                         >
-                            <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                            <span className="text-xs font-bold text-blue-400 tracking-widest uppercase">Visión Estratégica</span>
+                            <span className="relative flex h-2.5 w-2.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
+                            </span>
+                            <span className="text-xs font-bold text-slate-300 tracking-widest uppercase">Visión Estratégica</span>
                         </motion.div>
 
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-tight"
-                        >
-                            No es solo una "página web". <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                                Es una herramienta para ganar.
-                            </span>
-                        </motion.h2>
+                        <div className="space-y-4">
+                            <motion.h2
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[1.1]"
+                            >
+                                No es solo una web. <br />
+                                Es tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400">ventaja injusta.</span>
+                            </motion.h2>
 
-                        <motion.p
+                            <motion.p
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.2 }}
+                                className="text-lg text-slate-400 leading-relaxed max-w-lg"
+                            >
+                                En 2026, la "presencia digital" no sirve si no factura. Transformamos tu tecnología en un activo que ahorra costos, atrae tráfico IA y vende mientras duermes.
+                            </motion.p>
+                        </div>
+
+                        <motion.div
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            className="text-gray-400 text-lg leading-relaxed"
+                            transition={{ delay: 0.4 }}
+                            className="flex flex-wrap gap-4 pt-4"
                         >
-                            En 2026, tener una página bonita no es suficiente. Te ayudamos a usar la tecnología para ahorrar tiempo, gastar menos en procesos manuales y lograr que la Inteligencia Artificial recomiende tu negocio cuando alguien busque lo que haces.
-                        </motion.p>
+                            {["Automatización", "SEO para IA", "Ventas B2B"].map((tag, i) => (
+                                <span key={i} className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-medium text-slate-400">
+                                    {tag}
+                                </span>
+                            ))}
+                        </motion.div>
                     </div>
 
-                    {/* Acordeón de Contexto */}
-                    <div className="space-y-4">
-                        {contextItems.map((item, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 10 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${activeTab === index
-                                    ? "bg-white/10 border-blue-500/50 shadow-lg shadow-blue-500/10"
-                                    : "bg-white/5 border-white/10 hover:bg-white/10"
-                                    }`}
-                            >
-                                <button
-                                    onClick={() => setActiveTab(activeTab === index ? null : index)}
-                                    className="w-full p-6 flex items-start gap-4 text-left"
+                    {/* Right Column: Interactive Context Accordion */}
+                    <div className="space-y-4 lg:pl-8">
+                        {contextItems.map((item, index) => {
+                            const isActive = activeTab === index;
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.15 }}
+                                    onClick={() => setActiveTab(isActive ? null : index)}
+                                    className={`group cursor-pointer relative rounded-2xl border transition-all duration-500 overflow-hidden
+                                        ${isActive
+                                            ? "bg-gradient-to-r from-slate-900/90 to-slate-900/50 border-blue-500/30 shadow-[0_0_30px_-10px_rgba(59,130,246,0.15)]"
+                                            : "bg-slate-900/20 border-white/5 hover:bg-slate-900/40 hover:border-white/10"
+                                        }`}
                                 >
-                                    <div className={`mt-1 p-2 rounded-lg transition-colors ${activeTab === index ? "bg-blue-500 text-white" : "bg-white/5 text-gray-400"}`}>
-                                        {item.icon}
-                                    </div>
-                                    <div className="flex-1">
-                                        <div className="flex items-center justify-between">
-                                            <h3 className={`text-lg font-bold ${activeTab === index ? "text-white" : "text-gray-300"}`}>
-                                                {item.title}
-                                            </h3>
-                                            <ChevronDown className={`w-5 h-5 transition-transform ${activeTab === index ? "rotate-180 text-blue-400" : "text-gray-500"}`} />
-                                        </div>
-                                        <p className="text-sm text-gray-400 mt-1">{item.summary}</p>
-                                    </div>
-                                </button>
+                                    {/* Active Glow Bar */}
+                                    <div className={`absolute left-0 top-0 bottom-0 w-1 transition-all duration-300 ${isActive ? "bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.6)]" : "bg-transparent"}`} />
 
-                                <AnimatePresence>
-                                    {activeTab === index && (
-                                        <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: "auto", opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            className="overflow-hidden"
-                                        >
-                                            <div className="px-6 pb-6 pt-0 pl-[4.5rem]">
-                                                <p className="text-sm text-gray-300 leading-relaxed border-l-2 border-blue-500/30 pl-4">
-                                                    {item.details}
-                                                </p>
+                                    <div className="p-5 md:p-6 flex items-start gap-5">
+                                        <div className={`relative flex-shrink-0 p-3 rounded-xl transition-all duration-500 ${isActive ? `${item.bg} ${item.color} scale-110 shadow-lg` : "bg-white/5 text-slate-500"}`}>
+                                            {item.icon}
+                                        </div>
+
+                                        <div className="flex-1 space-y-1">
+                                            <div className="flex items-center justify-between">
+                                                <h3 className={`text-lg font-bold transition-colors duration-300 ${isActive ? "text-white" : "text-slate-300 group-hover:text-white"}`}>
+                                                    {item.title}
+                                                </h3>
+                                                <ChevronDown className={`w-5 h-5 transition-all duration-500 ${isActive ? "rotate-180 text-blue-400" : "text-slate-600 group-hover:text-slate-400"}`} />
                                             </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </motion.div>
-                        ))}
+
+                                            <p className={`text-sm transition-colors duration-300 ${isActive ? "text-blue-200/80 font-medium" : "text-slate-500"}`}>
+                                                {item.summary}
+                                            </p>
+
+                                            <AnimatePresence>
+                                                {isActive && (
+                                                    <motion.div
+                                                        initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                                                        animate={{ height: "auto", opacity: 1, marginTop: 16 }}
+                                                        exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                                                        className="overflow-hidden"
+                                                    >
+                                                        <p className="text-slate-300 text-sm leading-relaxed border-t border-white/10 pt-4">
+                                                            {item.details}
+                                                        </p>
+                                                        {index === 2 && (
+                                                            <div className="mt-4 flex items-center gap-2 text-xs font-bold text-indigo-400">
+                                                                <CheckCircle2 size={14} />
+                                                                <span>Estrategia Comprobada</span>
+                                                            </div>
+                                                        )}
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

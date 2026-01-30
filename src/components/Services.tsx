@@ -1,47 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import { Store, Palette, Smartphone, Trophy, MapPin, Truck, Music2, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { servicesData } from "@/data/services";
 
 export function Services() {
-    const services = [
-        {
-            title: "MUSIC INDUSTRY",
-            icon: <Music2 className="text-white" size={32} />,
-            desc: "Me apasiona la música. Si eres DJ, Productor o Músico, quiero crear tu identidad digital con visuales reactivos y experiencias web inmersivas.",
-            tags: ["Visuales Reactivos", "Press Kits", "Identidad Sonora"],
-            highlight: true
-        },
-        {
-            title: "Negocios Locales",
-            icon: <Store className="text-blue-400" size={32} />,
-            desc: "Tu tienda o ferretería en el mapa y en WhatsApp. Ideal para que tus vecinos te encuentren rápido.",
-            tags: ["Google Maps", "Catálogo WhatsApp", "Ventas Locales"]
-        },
-        {
-            title: "Alquileres & Convites",
-            icon: <Truck className="text-orange-400" size={32} />,
-            desc: "Sistemas para gestionar alquiler de mobiliario, sillas y mesas para fiestas y convites en los municipios.",
-            tags: ["Inventario", "Reservas", "Logística"]
-        },
-        {
-            title: "Influencers & TikTok",
-            icon: <Smartphone className="text-pink-500" size={32} />,
-            desc: "Edición de video viral y estrategia de contenido. Deja de editar y empieza a crear. Nosotros nos encargamos.",
-            tags: ["Reels/TikTok", "Edición Dinámica", "Viralidad"]
-        },
-        {
-            title: "Mundial 2026",
-            icon: <Trophy className="text-yellow-400" size={32} />,
-            desc: "Aprovecha la fiebre del fútbol. Quinielas para empresas y promociones automáticas para restaurantes.",
-            tags: ["Quinielas App", "Menús Dinámicos", "Marketing"]
-        },
-        {
-            title: "Tu Negocio en la IA",
-            icon: <MapPin className="text-green-400" size={32} />,
-            desc: "Hacemos que cuando alguien pregunte a la Inteligencia Artificial por un servicio, te recomiende a ti.",
-            tags: ["Posicionamiento GEO", "Búsqueda por Voz", "Futuro"]
-        }
-    ];
+    const services = servicesData;
 
     return (
         <section id="servicios" className="py-24 px-4 relative z-10 bg-black/40">
@@ -72,11 +35,11 @@ export function Services() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className={`group relative p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1 
+                            className={`group relative p-8 rounded-3xl transition-all duration-500 hover:-translate-y-2 
                                 ${/* @ts-ignore */
                                 service.highlight
-                                    ? "bg-gradient-to-br from-purple-900/40 via-black/60 to-black/80 border border-purple-500/30 md:col-span-2 lg:col-span-1"
-                                    : "bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-white/10"
+                                    ? "bg-gradient-to-br from-purple-900/60 via-slate-900/80 to-black border border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.2)] md:col-span-2 lg:col-span-1"
+                                    : "bg-white/[0.03] border border-white/10 hover:border-blue-500/50 hover:bg-white/[0.08] hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
                                 }`
                             }
                         >

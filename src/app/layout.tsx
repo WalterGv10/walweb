@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import LightPillar from "@/components/LightPillar";
 import { Header } from "@/components/Header";
+import JsonLd from "@/components/JsonLd";
+import { StarField } from "@/components/ui/StarField";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,14 +44,14 @@ export const metadata: Metadata = {
     description: "Tecnología sencilla para gente que trabaja en Guatemala.",
     images: ["/walter_pro.png"],
   },
-  icons: {
-    icon: [
-      { url: "/wal-logo.png" },
-      { url: "/wal-logo.png", sizes: "32x32" },
-      { url: "/wal-logo.png", sizes: "16x16" },
-    ],
-    apple: "/wal-logo.png",
-  },
+  // icons: {
+  //   icon: [
+  //     { url: "/wal-logo.png" },
+  //     { url: "/wal-logo.png", sizes: "32x32" },
+  //     { url: "/wal-logo.png", sizes: "16x16" },
+  //   ],
+  //   apple: "/wal-logo.png",
+  // },
 };
 
 export default function RootLayout({
@@ -65,15 +67,15 @@ export default function RootLayout({
         {/* Background Layer */}
         <div className="fixed inset-0 -z-20 pointer-events-none">
           <LightPillar
-            topColor="#1E40AF"
-            bottomColor="#06B6D4"
-            intensity={1.2}
-            rotationSpeed={0.4}
-            glowAmount={0.003}
-            pillarWidth={4.5}
-            pillarHeight={0.3}
-            noiseIntensity={0.3}
-            pillarRotation={15}
+            topColor="#7c3aed" /* Purple-600 */
+            bottomColor="#22d3ee" /* Cyan-400 */
+            intensity={1.3}
+            rotationSpeed={0.5}
+            glowAmount={0.004}
+            pillarWidth={5.0}
+            pillarHeight={0.35}
+            noiseIntensity={0.2}
+            pillarRotation={20}
             interactive={true}
             mixBlendMode="screen"
             quality="high"
@@ -84,10 +86,14 @@ export default function RootLayout({
         <div className="fixed inset-0 -z-10 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(0,0,0,0)_0%,rgba(0,0,0,0.8)_100%)]" />
         <div className="fixed inset-0 -z-10 pointer-events-none bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
 
+        {/* Stars Effect */}
+        <StarField />
+
         <Header />
         <main className="relative z-10 w-full h-full">
           {children}
         </main>
+        <JsonLd />
       </body>
     </html>
   );
