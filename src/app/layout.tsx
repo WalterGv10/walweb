@@ -16,21 +16,21 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://walweb.com.gt"),
-  title: "WalWeb | Walter García - Soluciones Web, Redes y Arquitectura",
-  description: "Portafolio profesional de Walter García. Especialista en desarrollo web con Next.js, infraestructura de redes (Cisco/Ubiquiti) y diseño arquitectónico profesional en Guatemala.",
+  title: "WalWeb | Soluciones Digitales que Funcionan",
+  description: "Ayudo a que tu negocio, tienda o evento en Guatemala se vea profesional y atraiga clientes en internet con tecnología sencilla y efectiva.",
   keywords: ["Walter Garcia", "WalWeb", "Desarrollo Web Guatemala", "Redes Cisco Ubiquiti", "Arquitectura Planos", "Sistemas de Inventario", "Soporte Bancario", "MTA Microsoft"],
   authors: [{ name: "Walter García" }],
   openGraph: {
-    title: "WalWeb | Soluciones Digitales & Arquitectura",
-    description: "Transformo ideas en experiencias digitales de alto impacto y diseños arquitectónicos profesionales.",
+    title: "WalWeb | Soluciones Digitales que Funcionan",
+    description: "Ayudo a que tu negocio o evento en Guatemala atraiga clientes con tecnología sencilla y diseño profesional.",
     url: "https://walweb.com.gt",
     siteName: "WalWeb",
     images: [
       {
-        url: "/walter.png",
+        url: "/walter_pro.png",
         width: 800,
         height: 800,
-        alt: "Walter García - WalWeb",
+        alt: "WalWeb - Soluciones Digitales",
       },
     ],
     locale: "es_GT",
@@ -38,12 +38,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WalWeb | Walter García",
-    description: "Desarrollo Web, Redes y Arquitectura.",
-    images: ["/walter.png"],
+    title: "WalWeb | Soluciones Digitales",
+    description: "Tecnología sencilla para gente que trabaja en Guatemala.",
+    images: ["/walter_pro.png"],
   },
   icons: {
-    icon: "/wal-logo.png",
+    icon: [
+      { url: "/wal-logo.png" },
+      { url: "/wal-logo.png", sizes: "32x32" },
+      { url: "/wal-logo.png", sizes: "16x16" },
+    ],
     apple: "/wal-logo.png",
   },
 };

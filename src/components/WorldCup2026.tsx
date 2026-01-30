@@ -1,133 +1,148 @@
 "use client";
 import { motion } from "framer-motion";
-import { Trophy, Smartphone, Users, TrendingUp, ArrowRight } from "lucide-react";
-import { BlurText } from "@/components/ui/blur-text";
+import { Trophy, Users, Utensils, ArrowRight, Zap } from "lucide-react";
 
 export function WorldCup2026() {
     return (
-        <section id="mundial2026" className="py-24 px-4 relative z-10 overflow-hidden">
-            {/* Background Gradients */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black via-[#0a1f13] to-black opacity-80" />
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-green-500/10 blur-[120px] pointer-events-none" />
+        <section className="py-24 px-4 relative bg-slate-950 overflow-hidden">
+            {/* Background Atmosphere */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/40 via-slate-950 to-slate-950" />
+            <div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
-                    {/* Contenido Texto */}
-                    <div className="space-y-8">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20">
-                            <Trophy className="w-4 h-4 text-green-400" />
-                            <span className="text-xs font-bold text-green-400 uppercase tracking-widest">Oportunidad 2026</span>
-                        </div>
+                {/* Header Centrado */}
+                <div className="text-center max-w-3xl mx-auto mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6"
+                    >
+                        <Trophy className="w-4 h-4 text-blue-400" />
+                        <span className="text-xs font-bold text-blue-400 uppercase tracking-widest">Kickoff 2026</span>
+                    </motion.div>
 
-                        <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-tight">
-                            El Mundial <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">
-                                Venderá por Ti
-                            </span>
-                        </h2>
+                    <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter leading-[0.9] mb-6">
+                        NO VEAS EL MUNDIAL. <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
+                            VENDE CON ÉL.
+                        </span>
+                    </h2>
 
-                        <p className="text-gray-400 text-lg leading-relaxed border-l-2 border-green-500/30 pl-6">
-                            El Mundial 2026 será en nuestro horario laboral. La atención de todo Guatemala estará en las pantallas.
-                            <span className="text-white font-bold block mt-2">¿Tu negocio será espectador o protagonista?</span>
-                        </p>
+                    <p className="text-lg md:text-xl text-slate-400 leading-relaxed">
+                        Miles de guatemaltecos buscando dónde ver el partido. <br className="hidden md:block" />
+                        Tu negocio puede ser su estadio o solo otra opción más.
+                    </p>
+                </div>
 
-                        <div className="space-y-6 pt-4">
-                            <Feature
-                                icon={<Users className="text-green-400" />}
-                                title="Quinielas Corporativas (Marca Blanca)"
-                                desc="Elimina el Excel. Una App Web con TU logo para que tus empleados o clientes predigan resultados. Aumenta la moral y la fidelidad."
-                            />
-                            <Feature
-                                icon={<Smartphone className="text-green-400" />}
-                                title="Menús Digitales HORECA"
-                                desc="Precios y promociones que cambian en tiempo real durante los partidos. Si hay gol, hay oferta. Venta impulsiva garantizada."
-                            />
-                        </div>
+                {/* Grid de Soluciones */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
 
-                        <div className="pt-8">
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl shadow-lg shadow-green-600/20 flex items-center gap-2 group transition-all"
-                            >
-                                Cotizar Solución Mundial
-                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            </motion.button>
-                        </div>
-                    </div>
+                    {/* Card 1: Corporativo */}
+                    <motion.div
+                        whileHover={{ y: -5 }}
+                        className="group relative p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-b from-white/5 to-white/[0.02] border border-white/10 overflow-hidden"
+                    >
+                        <div className="absolute inset-0 bg-blue-600/10 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-                    {/* Visual Mockup */}
-                    <div className="relative">
-                        <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black/50 backdrop-blur-xl group">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-green-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="relative z-10">
+                            <div className="w-14 h-14 rounded-2xl bg-blue-600/20 flex items-center justify-center mb-8 border border-blue-500/30">
+                                <Users className="w-7 h-7 text-blue-400" />
+                            </div>
 
-                            {/* UI Mockup - Quiniela */}
-                            <div className="p-6 md:p-8 space-y-6">
-                                <div className="flex items-center justify-between border-b border-white/5 pb-6">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-full bg-white/10 animate-pulse" />
-                                        <div className="space-y-1">
-                                            <div className="w-24 h-2 bg-white/20 rounded-full" />
-                                            <div className="w-16 h-2 bg-white/10 rounded-full" />
+                            <h3 className="text-3xl font-bold text-white mb-4">Quiniela Corporativa</h3>
+                            <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+                                Olvida el Excel. Crea una liga privada para tu empresa con <strong>branding personalizado</strong>. Aumenta la moral, reduce la rotación y fideliza clientes B2B.
+                            </p>
+
+                            {/* Mini Mockup */}
+                            <div className="bg-slate-950/50 rounded-xl border border-white/10 p-4 backdrop-blur-md">
+                                <div className="flex items-center justify-between mb-3 text-xs text-slate-500 uppercase font-bold tracking-widest">
+                                    <span>Ranking</span>
+                                    <span>Puntos</span>
+                                </div>
+                                <div className="space-y-3">
+                                    {[
+                                        { name: "Juan (Ventas)", pts: 152, color: "bg-blue-500" },
+                                        { name: "Ana (RRHH)", pts: 148, color: "bg-indigo-500" },
+                                        { name: "Carlos (IT)", pts: 145, color: "bg-purple-500" },
+                                    ].map((user, i) => (
+                                        <div key={i} className="flex items-center justify-between">
+                                            <div className="flex items-center gap-3">
+                                                <div className={`w-2 h-8 rounded-full ${user.color}`} />
+                                                <span className="text-white font-medium">{user.name}</span>
+                                            </div>
+                                            <span className="font-mono text-blue-400">{user.pts}</span>
                                         </div>
-                                    </div>
-                                    <div className="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold">
-                                        EN VIVO
-                                    </div>
+                                    ))}
                                 </div>
+                            </div>
+                        </div>
+                    </motion.div>
 
-                                <div className="space-y-4">
-                                    <PredictionCard team1="GUA" team2="ARG" odds="1.25" />
-                                    <PredictionCard team1="BRA" team2="FRA" odds="2.10" />
-                                    <PredictionCard team1="USA" team2="MEX" odds="1.80" />
+                    {/* Card 2: HORECA */}
+                    <motion.div
+                        whileHover={{ y: -5 }}
+                        className="group relative p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-b from-white/5 to-white/[0.02] border border-white/10 overflow-hidden"
+                    >
+                        <div className="absolute inset-0 bg-orange-600/10 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                        <div className="relative z-10">
+                            <div className="w-14 h-14 rounded-2xl bg-orange-600/20 flex items-center justify-center mb-8 border border-orange-500/30">
+                                <Utensils className="w-7 h-7 text-orange-400" />
+                            </div>
+
+                            <h3 className="text-3xl font-bold text-white mb-4">Menús Dinámicos</h3>
+                            <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+                                Si hay gol de Brasil, la cerveza baja 50% por 5 minutos. <br />
+                                <strong>Gamificación en tiempo real</strong> para restaurantes y bares. Convierte la emoción en consumo.
+                            </p>
+
+                            {/* Mini Mockup */}
+                            <div className="bg-slate-950/50 rounded-xl border border-white/10 p-4 backdrop-blur-md relative overflow-hidden">
+                                <div className="absolute top-0 right-0 px-3 py-1 bg-red-500 text-white text-[10px] font-bold uppercase tracking-wider rounded-bl-xl animate-pulse">
+                                    GOL DE BRASIL
                                 </div>
-
-                                <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center gap-4">
-                                    <TrendingUp className="text-green-400" />
+                                <div className="flex items-center gap-4 mt-2">
+                                    <div className="w-16 h-16 rounded-lg bg-orange-500/20 flex items-center justify-center">
+                                        <Zap className="w-8 h-8 text-orange-500" />
+                                    </div>
                                     <div>
-                                        <p className="text-xs text-green-300 font-bold uppercase">Ranking Empleados</p>
-                                        <p className="text-sm text-green-100">Juan Pérez lidera con 150 pts</p>
+                                        <p className="text-slate-400 text-xs uppercase font-bold text-decoration-line-through">Antes: Q35.00</p>
+                                        <div className="flex items-baseline gap-2">
+                                            <span className="text-3xl font-black text-white">Q15.00</span>
+                                            <span className="text-xs text-green-400 font-bold">Oferta Flash</span>
+                                        </div>
+                                        <div className="w-full bg-white/10 h-1.5 rounded-full mt-2 overflow-hidden">
+                                            <motion.div
+                                                initial={{ width: "100%" }}
+                                                animate={{ width: "0%" }}
+                                                transition={{ duration: 10, ease: "linear" }}
+                                                className="h-full bg-orange-500"
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </motion.div>
 
-                        {/* Decor elements */}
-                        <div className="absolute -top-10 -right-10 w-32 h-32 bg-green-500 rounded-full blur-[80px] opacity-20" />
-                        <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500 rounded-full blur-[80px] opacity-20" />
-                    </div>
                 </div>
+
+                {/* CTA Final */}
+                <div className="flex justify-center">
+                    <motion.a
+                        href="/contacto"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="px-10 py-5 bg-white text-slate-950 font-black text-lg rounded-full shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.5)] transition-all flex items-center gap-3"
+                    >
+                        Quiero mi Estrategia Mundialista
+                        <ArrowRight className="w-5 h-5" />
+                    </motion.a>
+                </div>
+
             </div>
         </section>
-    );
-}
-
-function Feature({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
-    return (
-        <div className="flex gap-4">
-            <div className="shrink-0 w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
-                {icon}
-            </div>
-            <div>
-                <h3 className="font-bold text-white text-lg">{title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mt-1">{desc}</p>
-            </div>
-        </div>
-    );
-}
-
-function PredictionCard({ team1, team2, odds }: { team1: string, team2: string, odds: string }) {
-    return (
-        <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
-            <div className="flex items-center gap-3">
-                <span className="font-bold text-white">{team1}</span>
-                <span className="text-xs text-gray-500">vs</span>
-                <span className="font-bold text-white">{team2}</span>
-            </div>
-            <div className="px-3 py-1 rounded-lg bg-black/40 text-xs font-mono text-gray-300">
-                x{odds}
-            </div>
-        </div>
     );
 }

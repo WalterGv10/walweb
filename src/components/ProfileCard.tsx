@@ -497,17 +497,14 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                             gridArea: '1 / -1'
                         }}
                     >
-                        {/* Shine layer */}
-                        <div style={shineStyle} />
-
-                        {/* Glare layer */}
-                        <div style={glareStyle} />
+                        {/* Shine layer removed */}
+                        {/* Glare layer removed */}
 
                         {/* Avatar content */}
                         <div
                             className="overflow-visible"
                             style={{
-                                mixBlendMode: 'luminosity',
+                                // mixBlendMode: 'luminosity',
                                 transform: 'translateZ(2px)',
                                 gridArea: '1 / -1',
                                 borderRadius: cardRadius,
@@ -525,11 +522,21 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                                     transform:
                                         'translateX(calc(-50% + (var(--pointer-from-left) - 0.5) * 6px)) translateZ(0) scaleY(calc(1 + (var(--pointer-from-top) - 0.5) * 0.02)) scaleX(calc(1 + (var(--pointer-from-left) - 0.5) * 0.01))',
                                     borderRadius: cardRadius,
-                                    backfaceVisibility: 'hidden'
+                                    backfaceVisibility: 'hidden',
+                                    filter: 'contrast(1.08) brightness(1.02) saturate(1.05) drop-shadow(0 10px 20px rgba(0,0,0,0.5))'
                                 }}
                                 onError={e => {
                                     const t = e.target as HTMLImageElement;
                                     t.style.display = 'none';
+                                }}
+                            />
+                            {/* Retoque: Viñeta sutil para enfocar el rostro */}
+                            <div
+                                className="absolute inset-0 pointer-events-none"
+                                style={{
+                                    background: 'radial-gradient(circle at 50% 40%, transparent 20%, rgba(0,0,0,0.4) 150%)',
+                                    borderRadius: cardRadius,
+                                    zIndex: 2
                                 }}
                             />
                             {showUserInfo && (
@@ -590,7 +597,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                             style={{
                                 transform:
                                     'translate3d(calc(var(--pointer-from-left) * -6px + 3px), calc(var(--pointer-from-top) * -6px + 3px), 0.1px)',
-                                mixBlendMode: 'luminosity',
+                                // mixBlendMode: 'luminosity',
                                 gridArea: '1 / -1',
                                 borderRadius: cardRadius,
                                 pointerEvents: 'none'

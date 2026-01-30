@@ -21,23 +21,18 @@ export function Hero() {
                         className="relative"
                     >
                         {/* Marco del Avatar - Optimizado para Laptop (1366x768) y Móvil (384x832) */}
-                        <div className="relative z-10 w-[220px] h-[280px] sm:w-[260px] sm:h-[340px] md:w-[320px] md:h-[400px] lg:w-[340px] lg:h-[440px] xl:w-[380px] xl:h-[480px] flex items-center justify-center">
-                            <ProfileCard
-                                avatarUrl="/walter.png"
-                                name="Walter Fernando GV"
-                                title="Digital Architect"
-                                handle="walwebsolutions"
-                                status="Online"
-                                contactText="Contact Me"
-                                enableTilt={true}
-                                enableMobileTilt={true}
-                                showUserInfo={true}
-                                behindGlowEnabled={true}
-                                behindGlowColor="rgba(59, 130, 246, 0.5)"
-                                onContactClick={() => {
-                                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                                }}
+                        <div className="relative z-10 w-[240px] h-[320px] sm:w-[280px] sm:h-[380px] md:w-[340px] md:h-[460px] lg:w-[350px] lg:h-[480px] xl:w-[400px] xl:h-[540px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
+                            <Image
+                                src="/walter_pro.png"
+                                alt="Walter Fernando GV"
+                                fill
+                                className="object-cover transition-transform duration-700 hover:scale-110"
+                                priority
+                                sizes="(max-width: 768px) 280px, 400px"
                             />
+                            {/* Subtle Overlays */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                            <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[2.5rem] pointer-events-none" />
                         </div>
 
                         {/* Card Flotante - Redimensionada y posicionada para no colisionar */}
@@ -99,23 +94,20 @@ export function Hero() {
                             <BlurText text="Ingeniería Digital que Vende" delay={40} />
                         </h1>
                         <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-lg mx-auto lg:mx-0 leading-relaxed px-2 lg:px-0">
-                            Transformamos PYMES y Eventos en Guatemala. Diseño web estratégico, automatización de procesos y soluciones para el Mundial 2026.
-                            <span className="block mt-3 text-blue-400 font-medium bg-blue-500/10 py-1 px-3 rounded-lg w-fit mx-auto lg:mx-0 border border-blue-500/20">
-                                Desde Guatemala City para toda la región.
-                            </span>
+                            Ayudamos a que tu negocio, tienda o evento se vea profesional y atraiga clientes en internet. Páginas sencillas que funcionan, tecnología que te ahorra tiempo y soluciones para el Mundial 2026.
                         </p>
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-3 pt-2 px-4 lg:px-0">
                         <Link
-                            href="#contact"
+                            href="/contacto"
                             className="px-6 py-3.5 md:px-8 md:py-4 bg-white text-black font-bold rounded-xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center shadow-xl text-sm md:text-base"
                         >
                             Iniciar Proyecto
                             <ArrowRight className="ml-2 w-4 h-4" />
                         </Link>
                         <Link
-                            href="#history"
+                            href="/trayectoria"
                             className="px-6 py-3.5 md:px-8 md:py-4 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl border border-white/10 backdrop-blur-md transition-all flex items-center justify-center text-sm md:text-base"
                         >
                             Trayectoria

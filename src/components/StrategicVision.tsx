@@ -50,9 +50,9 @@ export function StrategicVision() {
                             viewport={{ once: true }}
                             className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-tight"
                         >
-                            No vendemos "Sitios Web". <br />
+                            No es solo una "página web". <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                                Diseñamos Eficiencia.
+                                Es una herramienta para ganar.
                             </span>
                         </motion.h2>
 
@@ -63,7 +63,7 @@ export function StrategicVision() {
                             transition={{ delay: 0.2 }}
                             className="text-gray-400 text-lg leading-relaxed"
                         >
-                            El panorama 2026 exige más que estética. Fusionamos la ingeniería de software con la visión comercial para navegar las fuerzas tectónicas del mercado: costos laborales, inteligencia artificial y eventos globales.
+                            En 2026, tener una página bonita no es suficiente. Te ayudamos a usar la tecnología para ahorrar tiempo, gastar menos en procesos manuales y lograr que la Inteligencia Artificial recomiende tu negocio cuando alguien busque lo que haces.
                         </motion.p>
                     </div>
 

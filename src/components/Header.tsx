@@ -17,11 +17,11 @@ export function Header() {
     }, []);
 
     const navLinks = [
-        { name: "Inicio", href: "#" },
-        { name: "Servicios", href: "#servicios" },
-        { name: "Mundial 2026", href: "#mundial2026" },
-        { name: "Portafolio", href: "#history" },
-        { name: "Contacto", href: "#contact" },
+        { name: "Inicio", href: "/" },
+        { name: "Servicios", href: "/servicios" },
+        { name: "Mundial 2026", href: "/mundial" },
+        { name: "Trayectoria", href: "/trayectoria" },
+        { name: "Contacto", href: "/contacto" },
     ];
 
     return (
@@ -86,7 +86,7 @@ export function Header() {
                     {/* CTA Button */}
                     <div className="hidden md:flex items-center gap-4">
                         <Link
-                            href="#contact"
+                            href="/contacto"
                             className="group relative px-6 py-2.5 rounded-full bg-blue-600 overflow-hidden transition-all hover:scale-105 active:scale-95"
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -145,7 +145,7 @@ export function Header() {
                             className="pt-6 border-t border-white/5"
                         >
                             <Link
-                                href="#contact"
+                                href="/contacto"
                                 onClick={() => setMobileMenuOpen(false)}
                                 className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white flex items-center justify-center gap-3 font-black uppercase tracking-widest shadow-xl shadow-blue-500/20"
                             >
