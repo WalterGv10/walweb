@@ -38,7 +38,19 @@ To ensure that links shared on social media (WhatsApp, Facebook, LinkedIn, Twitt
   },
   ```
 
-## 3. Twitter Card
+## 3. Platform Specifics (WhatsApp, Instagram, TikTok)
+- [ ] **WhatsApp**:
+  - Uses `og:image`.
+  - **Critical**: Image size must be **< 300KB** and ideally **square (1:1)** or **1.91:1**.
+  - If the image is too heavy, WhatsApp will NOT show it.
+- [ ] **Instagram**:
+  - Automatically fetches `og:image` for DMs.
+  - Unlike Facebook/Twitter, Instagram posts do not generate link previews with large images, but stories and DMs do.
+- [ ] **TikTok**:
+  - Uses `og:image` and `og:description` for internal messages.
+  - Ensure the title is short and catchy.
+
+## 4. Twitter/X Card
 - [ ] **`twitter` Object**:
   ```typescript
   twitter: {
