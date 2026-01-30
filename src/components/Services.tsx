@@ -1,0 +1,102 @@
+"use client";
+import { motion } from "framer-motion";
+import { Store, Palette, Smartphone, Trophy, MapPin, Truck } from "lucide-react";
+
+export function Services() {
+    const services = [
+        {
+            title: "Negocios Locales",
+            icon: <Store className="text-blue-400" size={32} />,
+            desc: "Tu tienda o ferretería en el mapa y en WhatsApp. Ideal para que tus vecinos te encuentren rápido.",
+            tags: ["Google Maps", "Catálogo WhatsApp", "Ventas Locales"]
+        },
+        {
+            title: "Alquileres & Convites",
+            icon: <Truck className="text-orange-400" size={32} />,
+            desc: "Sistemas para gestionar alquiler de mobiliario, sillas y mesas para fiestas y convites en los municipios.",
+            tags: ["Inventario", "Reservas", "Logística"]
+        },
+        {
+            title: "Artistas y Grupos",
+            icon: <Palette className="text-purple-400" size={32} />,
+            desc: "Imagen profesional para DJs, Pintores, Marimbas y Grupos. Kits de prensa para cerrar más contratos.",
+            tags: ["Branding", "EPK Web", "Tarjetas Digitales"]
+        },
+        {
+            title: "Influencers & TikTok",
+            icon: <Smartphone className="text-pink-500" size={32} />,
+            desc: "Edición de video viral y estrategia de contenido. Deja de editar y empieza a crear. Nosotros nos encargamos.",
+            tags: ["Reels/TikTok", "Edición Dinámica", "Viralidad"]
+        },
+        {
+            title: "Mundial 2026",
+            icon: <Trophy className="text-yellow-400" size={32} />,
+            desc: "Aprovecha la fiebre del fútbol. Quinielas para empresas y promociones automáticas para restaurantes.",
+            tags: ["Quinielas App", "Menús Dinámicos", "Marketing"]
+        },
+        {
+            title: "Tu Negocio en la IA",
+            icon: <MapPin className="text-green-400" size={32} />,
+            desc: "Hacemos que cuando alguien pregunte a la Inteligencia Artificial por un servicio, te recomiende a ti.",
+            tags: ["Posicionamiento GEO", "Búsqueda por Voz", "Futuro"]
+        }
+    ];
+
+    return (
+        <section id="servicios" className="py-24 px-4 relative z-10 bg-black/40">
+            <div className="max-w-7xl mx-auto">
+                <div className="text-center mb-16 space-y-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="inline-block px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 mb-4"
+                    >
+                        <span className="text-xs font-bold text-blue-400 uppercase tracking-widest">Soluciones Reales</span>
+                    </motion.div>
+
+                    <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter">
+                        Tecnología para <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Gente que Trabaja</span>
+                    </h2>
+                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                        Herramientas digitales diseñadas para vender más, ahorrar tiempo y modernizar tu imagen. Sin palabras complicadas.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+                    {services.map((service, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="group relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                            <div className="relative z-10">
+                                <div className="mb-6 p-4 rounded-2xl bg-white/5 w-fit group-hover:scale-110 transition-transform duration-300 ring-1 ring-white/10">
+                                    {service.icon}
+                                </div>
+
+                                <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                                <p className="text-gray-400 text-sm leading-relaxed mb-6 h-auto min-h-[40px]">
+                                    {service.desc}
+                                </p>
+
+                                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+                                    {service.tags.map((tag, tIndex) => (
+                                        <span key={tIndex} className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/5 text-gray-300 border border-white/10">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}

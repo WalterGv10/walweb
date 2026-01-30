@@ -18,9 +18,9 @@ export function Header() {
 
     const navLinks = [
         { name: "Inicio", href: "#" },
-        { name: "Servicios", href: "#services" },
-        { name: "Experiencia", href: "#history" },
-        { name: "Workflow", href: "#workflow" },
+        { name: "Servicios", href: "#servicios" },
+        { name: "Mundial 2026", href: "#mundial2026" },
+        { name: "Portafolio", href: "#history" },
         { name: "Contacto", href: "#contact" },
     ];
 
@@ -91,7 +91,7 @@ export function Header() {
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                             <span className="relative flex items-center gap-2 text-sm font-black text-white uppercase tracking-widest">
-                                Contratar
+                                Consultoría
                                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                             </span>
                         </Link>

@@ -1,6 +1,8 @@
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/Hero";
-import { PersonalStats } from "@/components/PersonalStats";
+import { StrategicVision } from "@/components/StrategicVision";
+import { Services } from "@/components/Services";
+import { WorldCup2026 } from "@/components/WorldCup2026";
 import { TechExpertise } from "@/components/TechExpertise";
 import { CommercialBanner } from "@/components/CommercialBanner";
 
@@ -14,7 +16,9 @@ export default function Home() {
   return (
     <div className="w-full">
       <Hero />
-      <PersonalStats />
+      <StrategicVision />
+      <Services />
+      <WorldCup2026 />
       <TechExpertise />
       <CommercialBanner />
       <ArchWorkflow />

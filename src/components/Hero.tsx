@@ -4,10 +4,11 @@ import Link from "next/link";
 import { ArrowRight, Code, Layout, HardHat } from "lucide-react";
 import { BlurText } from "@/components/ui/blur-text";
 import { motion } from "framer-motion";
+import ProfileCard from "./ProfileCard";
 
 export function Hero() {
     return (
-        <section className="relative min-h-[100svh] lg:min-h-[550px] flex flex-col items-center justify-center pt-20 pb-8 px-4 overflow-hidden">
+        <section className="relative min-h-[100svh] lg:min-h-[600px] xl:min-h-[700px] flex flex-col items-center justify-center pt-24 pb-12 px-4 overflow-hidden">
             {/* Contenedor Principal */}
             <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
 
@@ -19,19 +20,24 @@ export function Hero() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="relative"
                     >
-                        {/* Marco del Avatar - Altamente optimizado para viewports bajos (1366x599) */}
-                        <div className="relative z-10 w-[200px] h-[260px] sm:w-64 sm:h-80 md:w-80 md:h-[380px] lg:w-[300px] lg:h-[400px] rounded-[50px] md:rounded-[80px] p-1 bg-gradient-to-b from-blue-500/30 via-cyan-500/10 to-transparent backdrop-blur-sm overflow-hidden border border-white/20 shadow-2xl shadow-blue-500/20">
-                            <div className="relative w-full h-full rounded-[49px] md:rounded-[79px] overflow-hidden grayscale-[0.2] hover:grayscale-0 transition-all duration-700">
-                                <Image
-                                    src="/walter.png"
-                                    alt="Walter - WalWeb Solutions"
-                                    fill
-                                    className="object-cover object-top scale-110 hover:scale-100 transition-transform duration-1000"
-                                    priority
-                                    unoptimized
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-                            </div>
+                        {/* Marco del Avatar - Optimizado para Laptop (1366x768) y Móvil (384x832) */}
+                        <div className="relative z-10 w-[220px] h-[280px] sm:w-[260px] sm:h-[340px] md:w-[320px] md:h-[400px] lg:w-[340px] lg:h-[440px] xl:w-[380px] xl:h-[480px] flex items-center justify-center">
+                            <ProfileCard
+                                avatarUrl="/walter.png"
+                                name="Walter Fernando GV"
+                                title="Digital Architect"
+                                handle="walwebsolutions"
+                                status="Online"
+                                contactText="Contact Me"
+                                enableTilt={true}
+                                enableMobileTilt={true}
+                                showUserInfo={true}
+                                behindGlowEnabled={true}
+                                behindGlowColor="rgba(59, 130, 246, 0.5)"
+                                onContactClick={() => {
+                                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                }}
+                            />
                         </div>
 
                         {/* Card Flotante - Redimensionada y posicionada para no colisionar */}
@@ -89,11 +95,14 @@ export function Hero() {
                             />
                         </motion.h2>
 
-                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tighter leading-tight">
-                            <BlurText text="Soluciones Web & Arquitectura" delay={50} />
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-[1.1]">
+                            <BlurText text="Ingeniería Digital que Vende" delay={40} />
                         </h1>
                         <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-lg mx-auto lg:mx-0 leading-relaxed px-2 lg:px-0">
-                            Transformo ideas en experiencias digitales de alto impacto y diseños arquitectónicos profesionales.
+                            Transformamos PYMES y Eventos en Guatemala. Diseño web estratégico, automatización de procesos y soluciones para el Mundial 2026.
+                            <span className="block mt-3 text-blue-400 font-medium bg-blue-500/10 py-1 px-3 rounded-lg w-fit mx-auto lg:mx-0 border border-blue-500/20">
+                                Desde Guatemala City para toda la región.
+                            </span>
                         </p>
                     </div>
 
