@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     siteName: "WalWeb",
     images: [
       {
-        url: "/walter_pro.png",
-        width: 800,
-        height: 800,
+        url: "https://walweb.com.gt/walter_v2.jpg",
+        width: 1200,
+        height: 1200,
         alt: "WalWeb - Soluciones Digitales",
       },
     ],
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "WalWeb | Soluciones Digitales",
     description: "Tecnología sencilla para gente que trabaja en Guatemala.",
-    images: ["/walter_pro.png"],
+    images: ["https://walweb.com.gt/walter_v2.jpg"],
   },
   // icons: {
   //   icon: [
