@@ -40,7 +40,7 @@ export function TechExpertise() {
     ];
 
     return (
-        <section className="py-12 lg:py-20 px-4 relative z-10 overflow-hidden">
+        <section className="py-12 lg:py-20 px-4 relative z-10 overflow-hidden bg-transparent">
             <div className="max-w-6xl mx-auto space-y-8 lg:space-y-12">
 
                 <motion.div

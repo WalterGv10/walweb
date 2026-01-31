@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function DigitalCVAction() {
     return (
-        <section className="py-24 relative overflow-hidden bg-black/40">
+        <section className="py-24 relative overflow-hidden bg-transparent">
             {/* Background Decorative Elements */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/5 blur-[120px] rounded-full" />
 

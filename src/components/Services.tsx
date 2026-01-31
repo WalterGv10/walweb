@@ -7,17 +7,10 @@ export function Services() {
     const services = servicesData;
 
     return (
-        <section id="servicios" className="py-24 px-4 relative z-10 bg-black/40">
+        <section id="servicios" className="py-24 px-4 relative z-10 bg-transparent">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16 space-y-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="inline-block px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 mb-4"
-                    >
-                        <span className="text-xs font-bold text-blue-400 uppercase tracking-widest">Soluciones Reales</span>
-                    </motion.div>
+
 
                     <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter">
                         Tecnología para <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Gente que Trabaja</span>

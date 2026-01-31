@@ -18,7 +18,7 @@ export function CommercialBanner() {
         <section
             id="services"
             ref={containerRef}
-            className="py-20 md:py-32 relative overflow-hidden bg-black/40 border-y border-white/5"
+            className="py-20 md:py-32 relative overflow-hidden bg-transparent border-y border-white/5"
         >
             {/* Immersive Background Elements */}
             <div className="absolute inset-0 pointer-events-none">
