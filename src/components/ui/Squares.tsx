@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef, useEffect } from 'react';
 
 type CanvasStrokeStyle = string | CanvasGradient | CanvasPattern;
@@ -35,17 +37,26 @@ const Squares: React.FC<SquaresProps> = ({
         const ctx = canvas.getContext('2d');
 
         const resizeCanvas = () => {
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-            numSquaresX.current = Math.ceil(canvas.width / squareSize) + 1;
-            numSquaresY.current = Math.ceil(canvas.height / squareSize) + 1;
+            const displayWidth = canvas.clientWidth;
+            const displayHeight = canvas.clientHeight;
+
+            if (canvas.width !== displayWidth || canvas.height !== displayHeight) {
+                canvas.width = displayWidth;
+                canvas.height = displayHeight;
+                numSquaresX.current = Math.ceil(canvas.width / squareSize) + 1;
+                numSquaresY.current = Math.ceil(canvas.height / squareSize) + 1;
+            }
         };
 
-        window.addEventListener('resize', resizeCanvas);
+        const resizeObserver = new ResizeObserver(() => {
+            resizeCanvas();
+        });
+
+        resizeObserver.observe(canvas);
         resizeCanvas();
 
         const drawGrid = () => {
-            if (!ctx) return;
+            if (!ctx || canvas.width === 0 || canvas.height === 0) return;
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -142,7 +153,7 @@ const Squares: React.FC<SquaresProps> = ({
         requestRef.current = requestAnimationFrame(updateAnimation);
 
         return () => {
-            window.removeEventListener('resize', resizeCanvas);
+            resizeObserver.disconnect();
             if (requestRef.current) cancelAnimationFrame(requestRef.current);
             canvas.removeEventListener('mousemove', handleMouseMove);
             canvas.removeEventListener('mouseleave', handleMouseLeave);
