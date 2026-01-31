@@ -29,7 +29,10 @@ export function ArchWorkflow() {
 
     return (
         <section id="workflow" className="py-16 md:py-24 px-4 relative z-10 overflow-hidden">
-            <div className="max-w-6xl mx-auto">
+
+
+
+            <div className="max-w-6xl mx-auto relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}

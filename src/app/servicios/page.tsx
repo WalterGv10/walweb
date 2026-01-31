@@ -18,7 +18,7 @@ export default function ServicesPage() {
             <TechExpertise />
             <CommercialBanner />
             <DigitalCVAction />
-            <PageNavigation nextPath="/trayectoria" nextLabel="Mi Trayectoria" />
+            <PageNavigation nextPath="/arquitectura" nextLabel="Arquitectura & Diseño" />
         </div>
     );
 }

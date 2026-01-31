@@ -1,5 +1,4 @@
 import { History } from "@/components/History";
-import { ArchWorkflow } from "@/components/ArchWorkflow";
 import { PersonalStats } from "@/components/PersonalStats";
 import { PageNavigation } from "@/components/ui/PageNavigation";
 
@@ -15,7 +14,6 @@ export default function TrayectoriaPage() {
         <div className="w-full pt-20">
             <History />
             <PersonalStats />
-            <ArchWorkflow />
             <PageNavigation nextPath="/mundial" nextLabel="Mundial 2026" />
         </div>
     );
