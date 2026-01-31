@@ -3,25 +3,13 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import dynamic from "next/dynamic";
-const Squares = dynamic(() => import("./ui/Squares"), { ssr: false });
 
 export function ArchHero() {
     return (
-        <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden bg-black/90">
-            {/* Animated Background */}
-            <div className="absolute inset-0 w-full h-full z-0">
-                <Squares
-                    direction="diagonal"
-                    speed={0.5}
-                    borderColor="#271E37"
-                    squareSize={40}
-                    hoverFillColor="#222222"
-                />
-            </div>
+        <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden bg-transparent">
+            {/* Background removed, now handled by parent page */}
 
-            {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 z-10 pointer-events-none" />
+
 
             <div className="relative z-20 max-w-7xl mx-auto px-4 text-center">
                 <motion.div
@@ -30,11 +18,7 @@ export function ArchHero() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="space-y-6"
                 >
-                    <div className="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-4">
-                        <span className="text-blue-400 text-xs md:text-sm font-bold uppercase tracking-[0.2em]">
-                            Arquitectura Digital & BIM
-                        </span>
-                    </div>
+
 
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter leading-tight">
                         Precisión <br />
@@ -58,7 +42,7 @@ export function ArchHero() {
                         </Link>
                         <Link
                             href="#servicios"
-                            className="px-8 py-4 rounded-full border border-white/20 text-white font-medium hover:bg-white/10 transition-colors backdrop-blur-sm"
+                            className="px-8 py-4 rounded-full border border-white/20 text-white font-medium hover:bg-white/10 transition-colors"
                         >
                             Ver Servicios
                         </Link>

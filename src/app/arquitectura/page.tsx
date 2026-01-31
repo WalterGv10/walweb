@@ -3,6 +3,7 @@ import { PageNavigation } from "@/components/ui/PageNavigation";
 import { ArchHero } from "@/components/ArchHero";
 import { ArchServices } from "@/components/ArchServices";
 import { ArchBenefits } from "@/components/ArchBenefits";
+import { ArchBackground } from "@/components/ArchBackground";
 
 import type { Metadata } from "next";
 
@@ -13,12 +14,18 @@ export const metadata: Metadata = {
 
 export default function ArchitecturePage() {
     return (
-        <div className="w-full">
-            <ArchHero />
-            <ArchServices />
-            <ArchBenefits />
-            <ArchWorkflow />
-            <PageNavigation nextPath="/trayectoria" nextLabel="Mi Trayectoria" />
+        <div className="relative w-full min-h-screen bg-black overflow-hidden pt-20">
+            {/* Background Grid - Global for the entire page */}
+            <ArchBackground />
+
+            {/* Content Wrapper */}
+            <div className="relative z-10">
+                <ArchHero />
+                <ArchServices />
+                <ArchBenefits />
+                <ArchWorkflow />
+                <PageNavigation nextPath="/trayectoria" nextLabel="Mi Trayectoria" />
+            </div>
         </div>
     );
 }

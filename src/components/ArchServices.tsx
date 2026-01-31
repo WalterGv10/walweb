@@ -28,7 +28,7 @@ const services = [
 
 export function ArchServices() {
     return (
-        <section id="servicios" className="py-24 px-4 bg-black relative overflow-hidden">
+        <section id="servicios" className="py-24 px-4 bg-transparent relative overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
