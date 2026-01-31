@@ -33,7 +33,6 @@ export default function JsonLd() {
         },
         "sameAs": [
             "https://www.linkedin.com/in/waltergf",
-            "https://www.youtube.com/@walwebsolutions",
             "https://www.tiktok.com/@walwebsolutions",
             "https://wa.me/50254122572"
         ],
