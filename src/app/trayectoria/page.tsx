@@ -1,6 +1,7 @@
 import { History } from "@/components/History";
 import { ArchWorkflow } from "@/components/ArchWorkflow";
 import { PersonalStats } from "@/components/PersonalStats";
+import { PageNavigation } from "@/components/ui/PageNavigation";
 
 import type { Metadata } from "next";
 
@@ -15,6 +16,7 @@ export default function TrayectoriaPage() {
             <History />
             <PersonalStats />
             <ArchWorkflow />
+            <PageNavigation nextPath="/mundial" nextLabel="Mundial 2026" />
         </div>
     );
 }

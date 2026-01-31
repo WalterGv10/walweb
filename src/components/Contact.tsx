@@ -70,7 +70,7 @@ export function Contact() {
                 >
                     <div className="relative w-full h-full rounded-full overflow-hidden bg-slate-950">
                         <Image
-                            src="/walter_contact.png"
+                            src="/walter_pro.png"
                             alt="Walter García"
                             fill
                             className="object-cover"
@@ -136,7 +136,7 @@ export function Contact() {
                     <div className="relative w-36 h-36 rounded-full p-1.5 bg-gradient-to-br from-white/10 to-transparent backdrop-blur-md border border-white/10 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
                         <div className="relative w-full h-full rounded-full overflow-hidden bg-slate-950">
                             <Image
-                                src="/walter_contact.png"
+                                src="/walter_pro.png"
                                 alt="Walter García"
                                 fill
                                 className="object-cover"

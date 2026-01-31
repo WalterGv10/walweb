@@ -2,6 +2,7 @@ import { Services } from "@/components/Services";
 import { TechExpertise } from "@/components/TechExpertise";
 import { CommercialBanner } from "@/components/CommercialBanner";
 import { DigitalCVAction } from "@/components/DigitalCVAction";
+import { PageNavigation } from "@/components/ui/PageNavigation";
 
 import type { Metadata } from "next";
 
@@ -17,6 +18,7 @@ export default function ServicesPage() {
             <TechExpertise />
             <CommercialBanner />
             <DigitalCVAction />
+            <PageNavigation nextPath="/trayectoria" nextLabel="Mi Trayectoria" />
         </div>
     );
 }

@@ -3,7 +3,7 @@ export default function JsonLd() {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "WalWeb - Soluciones Digitales",
-        "image": "https://walweb.vercel.app/walter_pro.png",
+        "image": "https://walweb.vercel.app/walter_contact.png",
         "@id": "https://walweb.vercel.app",
         "url": "https://walweb.vercel.app",
         "telephone": "+50254122572",

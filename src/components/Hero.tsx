@@ -22,7 +22,7 @@ export function Hero() {
                         {/* Marco del Avatar - Optimizado para Móvil (384x832) */}
                         <div className="relative z-10 w-[260px] h-[340px] sm:w-[280px] sm:h-[380px] md:w-[340px] md:h-[460px] lg:w-[350px] lg:h-[480px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
                             <Image
-                                src="/walter_pro.png"
+                                src="/walter_contact.png"
                                 alt="Walter Fernando GV"
                                 fill
                                 className="object-cover transition-transform duration-700 hover:scale-110"

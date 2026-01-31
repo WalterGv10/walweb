@@ -1,4 +1,5 @@
 import { Contact } from "@/components/Contact";
+import { PageNavigation } from "@/components/ui/PageNavigation";
 
 import type { Metadata } from "next";
 
@@ -11,6 +12,7 @@ export default function ContactPage() {
     return (
         <div className="w-full pt-20">
             <Contact />
+            <PageNavigation nextPath="/" nextLabel="Volver al Inicio" subLabel="Inicio" />
         </div>
     );
 }
