@@ -4,11 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 
 export function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+    const pathname = usePathname();
+    const router = useRouter();
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -24,6 +27,14 @@ export function Header() {
         { name: "Trayectoria", href: "/trayectoria" },
         { name: "Contacto", href: "/contacto" },
     ];
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (pathname === href) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        if (mobileMenuOpen) setMobileMenuOpen(false);
+    };
 
     return (
         <header className="fixed top-0 left-0 w-full z-50 px-4 py-4 pointer-events-none">
@@ -42,7 +53,7 @@ export function Header() {
                         }`}
                 >
                     {/* Logo & Brand */}
-                    <Link href="/" className="flex items-center gap-2 md:gap-3 group relative z-50">
+                    <Link href="/" onClick={(e) => handleNavClick(e, "/")} className="flex items-center gap-2 md:gap-3 group relative z-50">
                         <div className="relative w-8 h-8 md:w-12 md:h-12 rounded-xl overflow-hidden border border-white/10 group-hover:border-blue-500/50 transition-all bg-black/40 backdrop-blur-md">
                             <Image
                                 src="/wal-logo.png"
@@ -65,6 +76,7 @@ export function Header() {
                             <Link
                                 key={link.name}
                                 href={link.href}
+                                onClick={(e) => handleNavClick(e, link.href)}
                                 onMouseEnter={() => setHoveredLink(link.name)}
                                 onMouseLeave={() => setHoveredLink(null)}
                                 className="relative px-5 py-2 text-sm font-semibold text-gray-300 hover:text-white transition-colors"
@@ -88,6 +100,7 @@ export function Header() {
                     <div className="hidden md:flex items-center gap-4">
                         <Link
                             href="/contacto"
+                            onClick={(e) => handleNavClick(e, "/contacto")}
                             className="group relative px-6 py-2.5 rounded-full bg-blue-600 overflow-hidden transition-all hover:scale-105 active:scale-95"
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -130,7 +143,7 @@ export function Header() {
                                 >
                                     <Link
                                         href={link.href}
-                                        onClick={() => setMobileMenuOpen(false)}
+                                        onClick={(e) => handleNavClick(e, link.href)}
                                         className="text-2xl font-black text-white hover:text-blue-400 transition-colors uppercase tracking-tight"
                                     >
                                         {link.name}
@@ -147,7 +160,7 @@ export function Header() {
                         >
                             <Link
                                 href="/contacto"
-                                onClick={() => setMobileMenuOpen(false)}
+                                onClick={(e) => handleNavClick(e, "/contacto")}
                                 className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white flex items-center justify-center gap-3 font-black uppercase tracking-widest shadow-xl shadow-blue-500/20"
                             >
                                 Contratar Ahora

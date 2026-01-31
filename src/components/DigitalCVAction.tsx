@@ -6,11 +6,11 @@ import Link from "next/link";
 export function DigitalCVAction() {
     return (
         <section className="py-24 relative overflow-hidden bg-transparent">
-            {/* Background Decorative Elements */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/5 blur-[120px] rounded-full" />
+            {/* Background Decorative Elements Optimized */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-blue-600/5 rounded-full" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="relative p-12 md:p-20 rounded-[3rem] border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-3xl overflow-hidden group">
+                <div className="relative p-12 md:p-20 rounded-[3rem] border border-white/10 bg-zinc-900/80 overflow-hidden group">
                     {/* Floating Icons Decoration */}
                     <motion.div
                         animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}

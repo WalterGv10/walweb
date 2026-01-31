@@ -39,7 +39,7 @@ export function Services() {
                             {/* @ts-ignore */
                                 service.highlight ? (
                                     <>
-                                        <div className="absolute inset-0 bg-purple-500/10 blur-[50px] rounded-full pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity" />
+                                        <div className="absolute inset-0 bg-purple-500/5 rounded-full pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity" />
                                         <div className="relative z-10 flex flex-col h-full justify-between">
                                             <div>
                                                 <div className="flex justify-between items-start mb-6">

@@ -66,7 +66,7 @@ export function TechExpertise() {
                                 key={i}
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
-                                className="p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl flex flex-col justify-between"
+                                className="p-6 rounded-3xl bg-zinc-900/50 border border-white/10 flex flex-col justify-between"
                             >
                                 <div>
                                     <div className="flex items-center gap-3 mb-4">
@@ -95,7 +95,7 @@ export function TechExpertise() {
                             whileInView={{ opacity: 1, x: 0 }}
                             className="relative h-full"
                         >
-                            <div className="relative p-6 lg:p-8 h-full rounded-3xl bg-black/40 border border-white/10 backdrop-blur-3xl overflow-hidden flex flex-col justify-between">
+                            <div className="relative p-6 lg:p-8 h-full rounded-3xl bg-zinc-900/80 border border-white/10 overflow-hidden flex flex-col justify-between">
                                 <div className="space-y-3">
                                     <div className="flex justify-between items-center">
                                         <span className="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 text-[8px] font-bold uppercase tracking-widest border border-blue-500/30">

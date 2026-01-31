@@ -20,12 +20,11 @@ export function CommercialBanner() {
             ref={containerRef}
             className="py-20 md:py-32 relative overflow-hidden bg-transparent border-y border-white/5"
         >
-            {/* Immersive Background Elements */}
+            {/* Immersive Background Elements - Optimized for Performance */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute inset-0 bg-black/60" /> {/* Added solid base */}
-                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 opacity-30" />
-                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-600/10 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 opacity-30" />
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.08] brightness-50 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-600/5 rounded-full -translate-y-1/2 translate-x-1/2 opacity-20" />
+                <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-600/5 rounded-full translate-y-1/2 -translate-x-1/2 opacity-20" />
             </div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -38,7 +37,7 @@ export function CommercialBanner() {
                                 initial={{ rotate: -10, scale: 0.8, opacity: 0 }}
                                 whileInView={{ rotate: 0, scale: 1, opacity: 1 }}
                                 whileHover={{ rotate: 5, scale: 1.05 }}
-                                className="relative w-20 h-20 md:w-24 md:h-24 p-0.5 rounded-3xl bg-gradient-to-tr from-blue-500/20 via-white/10 to-transparent backdrop-blur-xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group"
+                                className="relative w-20 h-20 md:w-24 md:h-24 p-0.5 rounded-3xl bg-white/5 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group"
                             >
                                 <div className="absolute inset-0 bg-blue-500/20 blur-2xl group-hover:bg-blue-500/40 transition-colors" />
                                 <div className="relative w-full h-full rounded-[1.4rem] bg-black/40 overflow-hidden flex items-center justify-center">
@@ -108,8 +107,8 @@ export function CommercialBanner() {
 
                     {/* Right Column: High-End Bento Mesh */}
                     <div className="flex-1 w-full relative">
-                        {/* Ambient Glows */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-500/5 blur-[100px] pointer-events-none" />
+                        {/* Ambient Glows Simplified */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-500/5 pointer-events-none" />
 
                         <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:auto-rows-[140px] lg:auto-rows-[160px]">
                             {/* Card 1: Main Focus (Large) */}
@@ -117,9 +116,9 @@ export function CommercialBanner() {
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 whileHover={{ y: -5 }}
-                                className="md:col-span-4 md:row-span-3 group relative p-6 lg:p-10 rounded-[2.5rem] bg-gradient-to-br from-white/10 to-transparent border border-white/10 backdrop-blur-3xl overflow-hidden flex flex-col justify-between shadow-2xl min-h-[380px] md:min-h-0"
+                                className="md:col-span-4 md:row-span-3 group relative p-6 lg:p-10 rounded-[2.5rem] bg-zinc-900/80 border border-white/10 overflow-hidden flex flex-col justify-between shadow-2xl min-h-[380px] md:min-h-0"
                             >
-                                <div className="absolute top-8 right-8 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all" />
+                                <div className="absolute top-8 right-8 w-32 h-32 bg-blue-500/5 rounded-full group-hover:bg-blue-500/10 transition-all" />
                                 <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.03)_50%,transparent_75%)] bg-[length:250%_250%] animate-[shimmer_8s_infinite] pointer-events-none" />
 
                                 <div className="relative z-10 space-y-4 lg:space-y-6">
@@ -197,7 +196,7 @@ export function CommercialBanner() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 }}
                                 whileHover={{ y: -5 }}
-                                className="md:col-span-2 md:row-span-3 group relative p-8 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-xl flex flex-col items-center justify-center text-center gap-6 min-h-[280px] md:min-h-0"
+                                className="md:col-span-2 md:row-span-3 group relative p-8 rounded-[2.5rem] bg-white/5 border border-white/10 flex flex-col items-center justify-center text-center gap-6 min-h-[280px] md:min-h-0"
                             >
                                 <div className="w-16 h-16 rounded-full bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
                                     <HardHat size={32} />
@@ -214,7 +213,7 @@ export function CommercialBanner() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
                                 whileHover={{ y: -5 }}
-                                className="md:col-span-4 md:row-span-1 group relative p-6 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-md flex items-center gap-6"
+                                className="md:col-span-4 md:row-span-1 group relative p-6 rounded-[2.5rem] bg-white/5 border border-white/10 flex items-center gap-6"
                             >
                                 <div className="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
                                     <Network size={28} />
@@ -236,7 +235,7 @@ export function CommercialBanner() {
                                         initial={{ opacity: 0, x: 20 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         transition={{ delay: 0.3 + i * 0.1 }}
-                                        className="flex-1 p-4 rounded-3xl bg-white/5 border border-white/5 backdrop-blur-sm flex items-center justify-center gap-3 hover:bg-white/10 transition-colors"
+                                        className="flex-1 p-4 rounded-3xl bg-white/5 border border-white/5 flex items-center justify-center gap-3 hover:bg-white/10 transition-colors"
                                     >
                                         <span className={item.color}>{item.icon}</span>
                                         <span className="text-[10px] font-black text-white uppercase tracking-widest">{item.title}</span>
