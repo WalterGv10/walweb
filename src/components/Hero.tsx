@@ -76,9 +76,45 @@ export function Hero() {
                             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
 
                             <div className="relative p-4 lg:p-6 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl">
-                                <p className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed italic">
-                                    "Si tu propósito es <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 font-black not-italic tracking-tight">innovar</span> o <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-black not-italic tracking-tight">hacerte la vida más fácil</span>, has llegado al lugar correcto."
-                                </p>
+                                <span className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed italic flex flex-wrap">
+                                    {[
+                                        { text: '"Si tu propósito es ', style: "" },
+                                        { text: 'innovar', style: "text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 font-black not-italic tracking-tight" },
+                                        { text: ' o ', style: "" },
+                                        { text: 'hacerte la vida más fácil', style: "text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-black not-italic tracking-tight" },
+                                        { text: ', has llegado al lugar correcto."', style: "" }
+                                    ].map((part, pIdx, parts) => {
+                                        // Calculate cumulative delay
+                                        const previousChars = parts.slice(0, pIdx).reduce((acc, p) => acc + p.text.length, 0);
+                                        return (
+                                            <span key={pIdx} className={`${part.style} flex flex-wrap`}>
+                                                {Array.from(part.text).map((char, cIdx) => (
+                                                    <motion.span
+                                                        key={cIdx}
+                                                        initial={{ opacity: 0 }}
+                                                        animate={{ opacity: 1 }}
+                                                        transition={{
+                                                            delay: 2.2 + (previousChars + cIdx) * 0.03,
+                                                            duration: 0
+                                                        }}
+                                                    >
+                                                        {char === " " ? "\u00A0" : char}
+                                                    </motion.span>
+                                                ))}
+                                            </span>
+                                        );
+                                    })}
+                                    <motion.span
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: [0, 1, 0] }}
+                                        transition={{
+                                            delay: 4.5,
+                                            duration: 0.8,
+                                            repeat: Infinity
+                                        }}
+                                        className="inline-block w-1.5 h-4 bg-blue-400 ml-1 self-center"
+                                    />
+                                </span>
                             </div>
 
                             {/* Accent Line */}
