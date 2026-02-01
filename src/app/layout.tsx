@@ -27,14 +27,6 @@ export const metadata: Metadata = {
     description: "Ayudo a que tu negocio o evento en Guatemala atraiga clientes con tecnología sencilla y diseño profesional.",
     url: "https://walweb.com.gt",
     siteName: "WalWeb",
-    images: [
-      {
-        url: "/walter.png",
-        width: 1200,
-        height: 1200,
-        alt: "Walter García - WalWeb",
-      },
-    ],
     locale: "es_GT",
     type: "website",
   },
@@ -42,7 +34,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "WalWeb | Soluciones Digitales",
     description: "Tecnología sencilla para gente que trabaja en Guatemala.",
-    images: ["/walter.png"],
   },
   // icons: {
   //   icon: [
