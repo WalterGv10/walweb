@@ -197,7 +197,7 @@ export default function DJMagnuzPage() {
                         {/* Visit Site CTA */}
                         <div className="mt-12 text-center">
                             <a
-                                href="https://djmagnuz.vercel.app"
+                                href="https://magnuzdj.netlify.app"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-2xl hover:scale-105"
