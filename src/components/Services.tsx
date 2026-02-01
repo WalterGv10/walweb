@@ -7,20 +7,20 @@ export function Services() {
     const services = servicesData;
 
     return (
-        <section id="servicios" className="py-24 px-4 relative z-10 bg-transparent">
+        <section id="servicios" className="py-16 lg:py-20 px-4 relative z-10 bg-transparent">
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-16 space-y-4">
+                <div className="text-center mb-12 lg:mb-16 space-y-4">
 
 
-                    <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter">
                         Tecnología para <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Gente que Trabaja</span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                    <p className="text-gray-400 max-w-2xl mx-auto text-base lg:text-lg">
                         Herramientas digitales diseñadas para vender más, ahorrar tiempo y modernizar tu imagen. Sin palabras complicadas.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 auto-rows-fr">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -28,7 +28,7 @@ export function Services() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className={`group relative p-8 rounded-3xl transition-all duration-500 hover:-translate-y-2 
+                            className={`group relative p-6 lg:p-8 rounded-3xl transition-all duration-500 hover:-translate-y-2 
                                 ${/* @ts-ignore */
                                 service.highlight
                                     ? "bg-gradient-to-br from-purple-900/60 via-slate-900/80 to-black border border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.2)] md:col-span-2 lg:col-span-1"
