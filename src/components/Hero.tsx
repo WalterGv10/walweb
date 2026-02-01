@@ -87,10 +87,13 @@ export function Hero() {
                         </motion.h2>
 
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-[1.05]">
-                            <BlurText text="Ingeniería Digital que Vende" delay={40} />
+                            <BlurText text="La Ventaja Injusta" delay={40} />
+                            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 text-3xl sm:text-4xl lg:text-5xl mt-2">
+                                que nadie te cuenta.
+                            </span>
                         </h1>
                         <p className="text-sm sm:text-base text-gray-400 max-w-lg mx-auto lg:mx-0 leading-relaxed px-2">
-                            Transformamos tu visión en una herramienta digital potente. Web, automatización y presencia estratégica para destacar en el mercado.
+                            La mayoría no lo entiende: el diseño no es solo "verse bonito". Es psicología aplicada para vender sin hablar. Tener una web de élite es como jugar con trucos: <strong>filtra clientes baratos y atrae solo a los mejores.</strong>
                         </p>
                     </div>
 
@@ -99,7 +102,7 @@ export function Hero() {
                             href="/contacto"
                             className="px-6 py-3.5 bg-white text-black font-black rounded-xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.4)] text-sm"
                         >
-                            Iniciar Proyecto
+                            Quiero esa Ventaja
                             <ArrowRight className="ml-2 w-4 h-4" />
                         </Link>
                         <Link
