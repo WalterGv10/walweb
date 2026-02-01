@@ -56,7 +56,7 @@ export default function DamarisCVPage() {
                             {["Astro 5", "Tailwind CSS v4", "TypeScript", "Personal Branding", "Responsive Design"].map((tech) => (
                                 <span
                                     key={tech}
-                                    className="text-xs font-bold px-3 py-1.5 rounded-md bg-white/80 text-slate-700 border border-slate-200 shadow-sm"
+                                    className="text-xs font-bold px-3 py-1.5 rounded-md bg-white/10 backdrop-blur-sm text-slate-900 border border-white/30 shadow-sm"
                                 >
                                     {tech}
                                 </span>
@@ -68,7 +68,7 @@ export default function DamarisCVPage() {
                 {/* Preview Image Section */}
                 <section className="py-12 px-4">
                     <div className="max-w-7xl mx-auto">
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 bg-white">
+                        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-white/10 backdrop-blur-sm">
                             <Image
                                 src="/damaris-cv-preview.png"
                                 alt="CV Elite - Damaris Pérez Preview"
@@ -85,7 +85,7 @@ export default function DamarisCVPage() {
                 <section className="py-12 px-4">
                     <div className="max-w-7xl mx-auto">
                         <div className="grid md:grid-cols-2 gap-8 mb-12">
-                            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
+                            <div className="p-8 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
                                 <h2 className="text-2xl font-black text-slate-900 mb-4">Sobre la Profesional</h2>
                                 <div className="space-y-3 text-slate-700">
                                     <p><strong className="text-blue-600">Nombre:</strong> Damaris Aracely Pérez Gonzalez</p>
@@ -98,7 +98,7 @@ export default function DamarisCVPage() {
                                 </div>
                             </div>
 
-                            <div className="p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-200 shadow-sm">
+                            <div className="p-8 rounded-3xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-md border border-blue-400/30 shadow-lg">
                                 <h2 className="text-2xl font-black text-slate-900 mb-4">Áreas de Especialización</h2>
                                 <div className="space-y-4">
                                     <div>
@@ -159,7 +159,7 @@ export default function DamarisCVPage() {
                                     description: "Integración directa para oportunidades laborales y networking profesional"
                                 }
                             ].map((feature, index) => (
-                                <div key={index} className="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
+                                <div key={index} className="group p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-blue-400/50 hover:shadow-xl hover:bg-white/20 transition-all duration-300">
                                     <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                         <feature.icon size={24} />
                                     </div>
@@ -176,7 +176,7 @@ export default function DamarisCVPage() {
                     <div className="max-w-7xl mx-auto">
                         <div className="grid md:grid-cols-3 gap-8">
                             {/* Concepto */}
-                            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
+                            <div className="p-8 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
                                 <h2 className="text-2xl font-black text-slate-900 mb-4">Concepto de Diseño</h2>
                                 <p className="text-slate-700 leading-relaxed">
                                     CV web que combina <strong>profesionalismo</strong> y <strong>modernidad</strong>.
@@ -186,7 +186,7 @@ export default function DamarisCVPage() {
                             </div>
 
                             {/* Tecnología */}
-                            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
+                            <div className="p-8 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
                                 <h2 className="text-2xl font-black text-slate-900 mb-4">Stack Tecnológico</h2>
                                 <ul className="space-y-2 text-slate-700">
                                     <li className="flex items-start gap-2">
@@ -209,7 +209,7 @@ export default function DamarisCVPage() {
                             </div>
 
                             {/* Impacto */}
-                            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
+                            <div className="p-8 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
                                 <h2 className="text-2xl font-black text-slate-900 mb-4">Valor Agregado</h2>
                                 <ul className="space-y-2 text-slate-700">
                                     <li className="flex items-start gap-2">
@@ -233,7 +233,7 @@ export default function DamarisCVPage() {
                         </div>
 
                         {/* Additional Info */}
-                        <div className="mt-12 p-8 rounded-3xl bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200">
+                        <div className="mt-12 p-8 rounded-3xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-md border border-blue-400/30 shadow-lg">
                             <h2 className="text-2xl font-black text-slate-900 mb-4">El Diferenciador</h2>
                             <p className="text-slate-700 leading-relaxed mb-4">
                                 Este proyecto representa la <strong>evolución del currículum tradicional</strong> hacia una experiencia digital interactiva.
