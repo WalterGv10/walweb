@@ -52,8 +52,8 @@ export function Header() {
             >
                 <div
                     className={`relative flex items-center justify-between transition-all duration-500 rounded-2xl md:rounded-[2.5rem] px-6 md:px-10 ${scrolled || isLightBgPage
-                            ? "py-3 bg-black/40 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
-                            : "py-6 bg-transparent border border-transparent"
+                        ? "py-3 bg-black/20 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                        : "py-6 bg-transparent border border-transparent"
                         }`}
                 >
                     {/* Logo & Brand */}
@@ -132,7 +132,7 @@ export function Header() {
                         initial={{ opacity: 0, scale: 0.95, y: -20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                        className="absolute top-24 left-4 right-4 pointer-events-auto bg-black/80 backdrop-blur-3xl border border-white/10 rounded-3xl p-8 md:hidden flex flex-col gap-6 shadow-2xl overflow-hidden"
+                        className="absolute top-24 left-4 right-4 pointer-events-auto bg-black/30 backdrop-blur-3xl border border-white/10 rounded-3xl p-8 md:hidden flex flex-col gap-6 shadow-2xl overflow-hidden"
                     >
                         {/* Background Decoration */}
                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 blur-3xl rounded-full" />

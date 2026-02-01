@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function DamarisCVPage() {
     return (
-        <div className="relative w-full min-h-screen bg-white overflow-hidden pt-20">
+        <div className="relative w-full min-h-screen bg-white overflow-hidden pt-16 md:pt-20">
             {/* Elegant Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Soft gradient orbs */}
@@ -24,7 +24,7 @@ export default function DamarisCVPage() {
 
             <div className="relative z-10">
                 {/* Header Section */}
-                <section className="py-12 px-4">
+                <section className="py-6 md:py-8 lg:py-12 px-4">
                     <div className="max-w-7xl mx-auto">
                         {/* Back Button */}
                         <Link
@@ -36,27 +36,27 @@ export default function DamarisCVPage() {
                         </Link>
 
                         {/* Project Title */}
-                        <div className="space-y-4 mb-12">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 text-blue-600 text-xs font-bold uppercase tracking-widest">
+                        <div className="space-y-3 md:space-y-4 mb-6 md:mb-10">
+                            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 text-blue-600 text-[10px] md:text-xs font-bold uppercase tracking-widest">
                                 <span>Diseño Web & Branding Personal</span>
                             </div>
-                            <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight">
+                            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
                                 CV Elite -{" "}
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
                                     Damaris Pérez
                                 </span>
                             </h1>
-                            <p className="text-slate-600 max-w-3xl text-lg leading-relaxed">
+                            <p className="text-slate-600 max-w-3xl text-sm md:text-base lg:text-lg leading-relaxed">
                                 Currículum vitae digital premium diseñado para profesionales del <strong>sector financiero</strong> que buscan destacar con una presencia web moderna y profesional. Este proyecto combina diseño minimalista con gradientes vibrantes para crear una experiencia única y memorable.
                             </p>
                         </div>
 
                         {/* Technology Tags */}
-                        <div className="flex flex-wrap gap-2 mb-12">
+                        <div className="flex flex-wrap gap-1.5 md:gap-2 mb-6 md:mb-10">
                             {["Astro 5", "Tailwind CSS v4", "TypeScript", "Personal Branding", "Responsive Design"].map((tech) => (
                                 <span
                                     key={tech}
-                                    className="text-xs font-bold px-3 py-1.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200 shadow-sm"
+                                    className="text-[10px] md:text-xs font-bold px-2 md:px-3 py-1 md:py-1.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200 shadow-sm"
                                 >
                                     {tech}
                                 </span>
@@ -66,9 +66,9 @@ export default function DamarisCVPage() {
                 </section>
 
                 {/* Preview Image Section */}
-                <section className="py-12 px-4">
+                <section className="py-6 md:py-8 lg:py-12 px-4">
                     <div className="max-w-7xl mx-auto">
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 bg-white">
+                        <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-2xl border border-slate-200 bg-white">
                             <Image
                                 src="/damaris-cv-preview.png"
                                 alt="CV Elite - Damaris Pérez Preview"
@@ -82,36 +82,36 @@ export default function DamarisCVPage() {
                 </section>
 
                 {/* Professional Info Section */}
-                <section className="py-12 px-4">
+                <section className="py-6 md:py-8 lg:py-12 px-4">
                     <div className="max-w-7xl mx-auto">
-                        <div className="grid md:grid-cols-2 gap-8 mb-12">
-                            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
-                                <h2 className="text-2xl font-black text-slate-900 mb-4">Sobre la Profesional</h2>
-                                <div className="space-y-3 text-slate-700">
+                        <div className="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-6 md:mb-10">
+                            <div className="p-4 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl bg-white border border-slate-200 shadow-sm">
+                                <h2 className="text-xl md:text-2xl font-black text-slate-900 mb-3 md:mb-4">Sobre la Profesional</h2>
+                                <div className="space-y-2 md:space-y-3 text-slate-700 text-sm md:text-base">
                                     <p><strong className="text-blue-600">Nombre:</strong> Damaris Aracely Pérez Gonzalez</p>
                                     <p><strong className="text-blue-600">Perfil:</strong> Perito en Mercadotecnia y Publicidad</p>
                                     <p><strong className="text-blue-600">Experiencia:</strong> +9 años en procesos administrativos</p>
                                     <p><strong className="text-blue-600">Sector:</strong> Financiero</p>
-                                    <p className="pt-2 text-sm leading-relaxed">
+                                    <p className="pt-2 text-xs md:text-sm leading-relaxed">
                                         Especialista en gestión de compras y administración, enfocada en eficiencia operativa, ética profesional y transparencia financiera.
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-200 shadow-sm">
-                                <h2 className="text-2xl font-black text-slate-900 mb-4">Áreas de Especialización</h2>
-                                <div className="space-y-4">
+                            <div className="p-4 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-200 shadow-sm">
+                                <h2 className="text-xl md:text-2xl font-black text-slate-900 mb-3 md:mb-4">Áreas de Especialización</h2>
+                                <div className="space-y-3 md:space-y-4">
                                     <div>
-                                        <h3 className="text-sm font-bold text-blue-600 mb-2">Sector Financiero:</h3>
-                                        <p className="text-sm text-slate-700">Precisión, control de costos y cumplimiento normativo</p>
+                                        <h3 className="text-xs md:text-sm font-bold text-blue-600 mb-1 md:mb-2">Sector Financiero:</h3>
+                                        <p className="text-xs md:text-sm text-slate-700">Precisión, control de costos y cumplimiento normativo</p>
                                     </div>
                                     <div>
-                                        <h3 className="text-sm font-bold text-purple-600 mb-2">Ética Profesional:</h3>
-                                        <p className="text-sm text-slate-700">Integridad en el manejo de recursos y negociaciones</p>
+                                        <h3 className="text-xs md:text-sm font-bold text-purple-600 mb-1 md:mb-2">Ética Profesional:</h3>
+                                        <p className="text-xs md:text-sm text-slate-700">Integridad en el manejo de recursos y negociaciones</p>
                                     </div>
                                     <div>
-                                        <h3 className="text-sm font-bold text-pink-600 mb-2">Eficiencia de Procesos:</h3>
-                                        <p className="text-sm text-slate-700">Optimización de recursos y reducción de tiempos</p>
+                                        <h3 className="text-xs md:text-sm font-bold text-pink-600 mb-1 md:mb-2">Eficiencia de Procesos:</h3>
+                                        <p className="text-xs md:text-sm text-slate-700">Optimización de recursos y reducción de tiempos</p>
                                     </div>
                                 </div>
                             </div>
@@ -120,13 +120,13 @@ export default function DamarisCVPage() {
                 </section>
 
                 {/* Key Features Section */}
-                <section className="py-12 px-4">
+                <section className="py-6 md:py-8 lg:py-12 px-4">
                     <div className="max-w-7xl mx-auto">
-                        <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">
+                        <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-4 md:mb-6 lg:mb-8 text-center">
                             Características del <span className="text-blue-600">CV Digital</span>
                         </h2>
 
-                        <div className="grid md:grid-cols-3 gap-6 mb-12">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-6 mb-6 md:mb-10">
                             {[
                                 {
                                     icon: Target,
@@ -159,12 +159,12 @@ export default function DamarisCVPage() {
                                     description: "Integración directa para oportunidades laborales y networking profesional"
                                 }
                             ].map((feature, index) => (
-                                <div key={index} className="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
-                                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                        <feature.icon size={24} />
+                                <div key={index} className="group p-3 md:p-4 lg:p-6 rounded-xl md:rounded-2xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
+                                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-lg md:rounded-xl flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                                        <feature.icon size={20} className="md:w-6 md:h-6" />
                                     </div>
-                                    <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
-                                    <p className="text-sm text-slate-600 leading-relaxed">{feature.description}</p>
+                                    <h3 className="text-sm md:text-base lg:text-lg font-bold text-slate-900 mb-1 md:mb-2">{feature.title}</h3>
+                                    <p className="text-xs md:text-sm text-slate-600 leading-relaxed">{feature.description}</p>
                                 </div>
                             ))}
                         </div>
@@ -172,13 +172,13 @@ export default function DamarisCVPage() {
                 </section>
 
                 {/* Project Details */}
-                <section className="py-12 px-4">
+                <section className="py-6 md:py-8 lg:py-12 px-4">
                     <div className="max-w-7xl mx-auto">
-                        <div className="grid md:grid-cols-3 gap-8">
+                        <div className="grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
                             {/* Concepto */}
-                            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
-                                <h2 className="text-2xl font-black text-slate-900 mb-4">Concepto de Diseño</h2>
-                                <p className="text-slate-700 leading-relaxed">
+                            <div className="p-4 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl bg-white border border-slate-200 shadow-sm">
+                                <h2 className="text-lg md:text-xl lg:text-2xl font-black text-slate-900 mb-2 md:mb-3 lg:mb-4">Concepto de Diseño</h2>
+                                <p className="text-xs md:text-sm lg:text-base text-slate-700 leading-relaxed">
                                     CV web que combina <strong>profesionalismo</strong> y <strong>modernidad</strong>.
                                     Diseño minimalista con gradientes suaves que transmite confianza y seriedad,
                                     ideal para el sector financiero. Cada sección cuenta una historia visual.
@@ -233,13 +233,13 @@ export default function DamarisCVPage() {
                         </div>
 
                         {/* Additional Info */}
-                        <div className="mt-12 p-8 rounded-3xl bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200">
-                            <h2 className="text-2xl font-black text-slate-900 mb-4">El Diferenciador</h2>
-                            <p className="text-slate-700 leading-relaxed mb-4">
+                        <div className="mt-6 md:mt-8 lg:mt-12 p-4 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200">
+                            <h2 className="text-lg md:text-xl lg:text-2xl font-black text-slate-900 mb-2 md:mb-3 lg:mb-4">El Diferenciador</h2>
+                            <p className="text-xs md:text-sm lg:text-base text-slate-700 leading-relaxed mb-3 md:mb-4">
                                 Este proyecto representa la <strong>evolución del currículum tradicional</strong> hacia una experiencia digital interactiva.
                                 No solo presenta información, sino que cuenta una historia profesional de manera visual y atractiva.
                             </p>
-                            <p className="text-slate-700 leading-relaxed">
+                            <p className="text-xs md:text-sm lg:text-base text-slate-700 leading-relaxed">
                                 Diseñado específicamente para profesionales que buscan destacar en el <strong>sector financiero</strong>,
                                 donde la primera impresión y la profesionalidad son fundamentales. Puedes crear uno formal adicional
                                 o usar este como tu propuesta premium.
