@@ -109,8 +109,18 @@ export function StrategicVision() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.15 }}
+                                    role="button"
+                                    tabIndex={0}
+                                    aria-expanded={isActive}
+                                    aria-controls={`accordion-content-${index}`}
+                                    onKeyDown={(e) => {
+                                        if (e.key === "Enter" || e.key === " ") {
+                                            e.preventDefault();
+                                            setActiveTab(isActive ? null : index);
+                                        }
+                                    }}
                                     onClick={() => setActiveTab(isActive ? null : index)}
-                                    className={`group cursor-pointer relative rounded-2xl border transition-all duration-500 overflow-hidden
+                                    className={`group cursor-pointer relative rounded-2xl border transition-all duration-500 overflow-hidden outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50
                                         ${isActive
                                             ? "bg-gradient-to-r from-slate-900/90 to-slate-900/50 border-blue-500/30 shadow-[0_0_30px_-10px_rgba(59,130,246,0.15)]"
                                             : "bg-slate-900/20 border-white/5 hover:bg-slate-900/40 hover:border-white/10"
@@ -139,6 +149,7 @@ export function StrategicVision() {
                                             <AnimatePresence>
                                                 {isActive && (
                                                     <motion.div
+                                                        id={`accordion-content-${index}`}
                                                         initial={{ height: 0, opacity: 0, marginTop: 0 }}
                                                         animate={{ height: "auto", opacity: 1, marginTop: 16 }}
                                                         exit={{ height: 0, opacity: 0, marginTop: 0 }}

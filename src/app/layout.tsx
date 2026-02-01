@@ -18,13 +18,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://walweb.com.gt"),
-  title: "WalWeb | Soluciones Digitales que Funcionan",
-  description: "Ayudo a que tu negocio, tienda o evento en Guatemala se vea profesional y atraiga clientes en internet con tecnología sencilla y efectiva.",
-  keywords: ["Walter Garcia", "WalWeb", "Desarrollo Web Guatemala", "Redes Cisco Ubiquiti", "Arquitectura Planos", "Sistemas de Inventario", "Soporte Bancario", "MTA Microsoft"],
+  title: "WalWeb | Innovación Digital & Soluciones Tecnológicas",
+  description: "Si tu propósito es innovar o hacerte la vida más fácil, estás en el lugar correcto. Especialista en Desarrollo Web, UI/UX y Consultoría TI en Guatemala.",
+  keywords: ["Walter Garcia", "WalWeb", "Desarrollo Web Guatemala", "Software Guatemala", "Diseño UX/UI", "Sistemas a Medida", "Consultoría TI"],
   authors: [{ name: "Walter García" }],
   openGraph: {
-    title: "WalWeb | Soluciones Digitales que Funcionan",
-    description: "Ayudo a que tu negocio o evento en Guatemala atraiga clientes con tecnología sencilla y diseño profesional.",
+    title: "WalWeb | Innovación Digital & Soluciones Tecnológicas",
+    description: "Transformamos ideas en realidad digital con tecnología disruptiva y diseño premium.",
     url: "https://walweb.com.gt",
     siteName: "WalWeb",
     locale: "es_GT",
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WalWeb | Soluciones Digitales",
-    description: "Tecnología sencilla para gente que trabaja en Guatemala.",
+    title: "WalWeb | Innovación Digital",
+    description: "Desarrollo de Software y Diseño Estratégico para impulsar tu visión.",
   },
   // icons: {
   //   icon: [
