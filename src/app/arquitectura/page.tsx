@@ -24,7 +24,7 @@ export default function ArchitecturePage() {
                 <ArchServices />
                 <ArchBenefits />
                 <ArchWorkflow />
-                <PageNavigation nextPath="/trayectoria" nextLabel="Mi Trayectoria" />
+                <PageNavigation nextPath="/contacto" nextLabel="Hablemos de tu Proyecto" />
             </div>
         </div>
     );

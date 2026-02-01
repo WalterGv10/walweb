@@ -65,18 +65,25 @@ export function Hero() {
                                     </motion.span>
                                 ))}
                             </motion.span>
-                            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 text-2xl sm:text-3xl lg:text-5xl xl:text-6xl mt-1 lg:mt-2">
-                                hecha para trascender.
-                            </span>
                         </h1>
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 2 }}
-                            className="text-sm sm:text-base lg:text-base text-gray-300 max-w-lg mx-auto lg:mx-0 leading-relaxed px-4 lg:px-2 border-l-2 border-blue-500/50 lg:border-blue-500/30 pl-4 py-2 lg:py-1 bg-white/5 lg:bg-transparent rounded-r-xl lg:rounded-none"
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 2, duration: 0.8 }}
+                            className="relative max-w-lg mx-auto lg:mx-0 group"
                         >
-                            "Si tu propósito es <strong className="text-white font-black text-base sm:text-lg lg:text-base">innovar</strong> o <strong className="text-white font-black text-base sm:text-lg lg:text-base">hacerte la vida más fácil</strong>, has llegado al lugar correcto."
-                        </motion.p>
+                            {/* Glass Background with Glow */}
+                            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
+
+                            <div className="relative p-4 lg:p-6 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl">
+                                <p className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed italic">
+                                    "Si tu propósito es <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 font-black not-italic tracking-tight">innovar</span> o <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-black not-italic tracking-tight">hacerte la vida más fácil</span>, has llegado al lugar correcto."
+                                </p>
+                            </div>
+
+                            {/* Accent Line */}
+                            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-2/3 bg-gradient-to-b from-blue-500 via-purple-500 to-transparent rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
+                        </motion.div>
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-3 pt-4 lg:pt-4 px-6 sm:px-0 justify-center lg:justify-start">

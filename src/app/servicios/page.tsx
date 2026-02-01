@@ -23,7 +23,7 @@ export default function ServicesPage() {
                 <TechExpertise />
                 <CommercialBanner />
                 <DigitalCVAction />
-                <PageNavigation nextPath="/arquitectura" nextLabel="Arquitectura & Diseño" />
+                <PageNavigation nextPath="/trayectoria" nextLabel="Ver mi Trayectoria" />
             </div>
         </div>
     );

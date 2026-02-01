@@ -14,7 +14,7 @@ export default function MundialPage() {
         <div className="w-full pt-20">
             <WorldCup2026 />
             <Contact />
-            <PageNavigation nextPath="/contacto" nextLabel="Contactar" />
+            <PageNavigation nextPath="/arquitectura" nextLabel="Arquitectura & Diseño" />
         </div>
     );
 }
