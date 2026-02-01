@@ -13,6 +13,9 @@ export function Header() {
     const pathname = usePathname();
     const router = useRouter();
 
+    // Detect if we're on a light background page
+    const isLightBgPage = pathname?.startsWith('/proyecto/');
+
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener("scroll", handleScroll);
@@ -48,9 +51,9 @@ export function Header() {
                 className="max-w-7xl mx-auto pointer-events-auto"
             >
                 <div
-                    className={`relative flex items-center justify-between transition-all duration-500 rounded-2xl md:rounded-[2.5rem] px-6 md:px-10 ${scrolled
-                        ? "py-3 bg-black/40 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
-                        : "py-6 bg-transparent border border-transparent"
+                    className={`relative flex items-center justify-between transition-all duration-500 rounded-2xl md:rounded-[2.5rem] px-6 md:px-10 ${scrolled || isLightBgPage
+                            ? "py-3 bg-black/40 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                            : "py-6 bg-transparent border border-transparent"
                         }`}
                 >
                     {/* Logo & Brand */}
