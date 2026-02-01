@@ -25,7 +25,7 @@ export function Contact() {
         },
         {
             icon: <Linkedin size={24} />,
-            href: "https://www.linkedin.com/in/waltergf",
+            href: "https://www.linkedin.com/in/waltetergv/",
             label: "LinkedIn",
             // Desktop: Bottom Left (8 o'clock)
             position: "md:bottom-[10%] md:left-[-10px]"

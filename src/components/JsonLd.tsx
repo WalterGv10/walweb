@@ -32,7 +32,7 @@ export default function JsonLd() {
             "closes": "18:00"
         },
         "sameAs": [
-            "https://www.linkedin.com/in/waltergf",
+            "https://www.linkedin.com/in/waltetergv/",
             "https://www.tiktok.com/@walwebsolutions",
             "https://wa.me/50254122572"
         ],
