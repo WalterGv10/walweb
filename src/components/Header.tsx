@@ -25,10 +25,10 @@ export function Header() {
     const navLinks = [
         { name: "Inicio", href: "/" },
         { name: "Servicios", href: "/servicios" },
-        { name: "Arquitectura", href: "/arquitectura" },
         { name: "Trayectoria", href: "/trayectoria" },
         { name: "Trabajo", href: "/trabajo" },
         { name: "Mundial 2026", href: "/mundial" },
+        { name: "Arquitectura", href: "/arquitectura" },
         { name: "Contacto", href: "/contacto" },
     ];
 
