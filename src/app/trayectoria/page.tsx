@@ -14,7 +14,7 @@ export default function TrayectoriaPage() {
         <div className="w-full pt-20">
             <History />
             <PersonalStats />
-            <PageNavigation nextPath="/mundial" nextLabel="Mundial 2026" />
+            <PageNavigation nextPath="/trabajo" nextLabel="Ver Mi Trabajo" />
         </div>
     );
 }

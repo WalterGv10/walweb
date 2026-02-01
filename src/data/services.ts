@@ -1,4 +1,4 @@
-import { Store, Smartphone, Trophy, MapPin, Truck, Music2 } from "lucide-react";
+import { Store, Smartphone, Trophy, MapPin, Truck, Music2, Sparkles } from "lucide-react";
 import React from "react";
 
 export interface ServiceItem {
@@ -10,6 +10,13 @@ export interface ServiceItem {
 }
 
 export const servicesData: ServiceItem[] = [
+    {
+        title: "Invitaciones Web Interactivas",
+        icon: React.createElement(Sparkles, { className: "text-white", size: 32 }),
+        desc: "Crea experiencias inmersivas para tus eventos. Micro-sitios personalizados con video HD, animaciones fluidas y fondos dinámicos. Optimizados para móvil con navegación táctil y carga rápida.",
+        tags: ["Micro-sitio", "Video HD", "Animaciones", "Responsive", "Carga Rápida"],
+        highlight: true
+    },
     {
         title: "MUSIC INDUSTRY",
         icon: React.createElement(Music2, { className: "text-white", size: 32 }),

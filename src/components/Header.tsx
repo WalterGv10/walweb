@@ -23,8 +23,9 @@ export function Header() {
         { name: "Inicio", href: "/" },
         { name: "Servicios", href: "/servicios" },
         { name: "Arquitectura", href: "/arquitectura" },
-        { name: "Mundial 2026", href: "/mundial" },
         { name: "Trayectoria", href: "/trayectoria" },
+        { name: "Trabajo", href: "/trabajo" },
+        { name: "Mundial 2026", href: "/mundial" },
         { name: "Contacto", href: "/contacto" },
     ];
 
