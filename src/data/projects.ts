@@ -16,17 +16,6 @@ export interface ProjectItem {
 
 export const projectsData: ProjectItem[] = [
     {
-        id: "damaris-cv",
-        title: "CV Elite - Damaris Pérez",
-        category: "Diseño Web & Branding Personal",
-        description: "Currículum vitae digital premium para profesional en administración y compras. CV web interactivo con diseño minimalista y gradientes vibrantes, optimizado para el sector financiero. Incluye timeline de carrera, educación, habilidades y formulario de contacto.",
-        tags: ["Astro 5", "Tailwind CSS v4", "CV Digital", "Personal Branding"],
-        link: "/proyecto/cv-damaris",
-        icon: React.createElement(Briefcase, { size: 40 }),
-        color: "from-blue-500 to-purple-600",
-        image: "/damaris-cv-preview.png"
-    },
-    {
         id: "control-fac",
         title: "ControlFAC",
         category: "SaaS & Automatización",
@@ -88,6 +77,17 @@ export const projectsData: ProjectItem[] = [
         link: "/arquitectura",
         icon: React.createElement(PenTool, { size: 40 }),
         color: "from-emerald-400 to-teal-500"
+    },
+    {
+        id: "damaris-cv",
+        title: "CV Elite - Damaris Pérez",
+        category: "Diseño Web & Branding Personal",
+        description: "Currículum vitae digital premium para profesional en administración y compras. CV web interactivo con diseño minimalista y gradientes vibrantes, optimizado para el sector financiero. Incluye timeline de carrera, educación, habilidades y formulario de contacto.",
+        tags: ["Astro 5", "Tailwind CSS v4", "CV Digital", "Personal Branding"],
+        link: "/proyecto/cv-damaris",
+        icon: React.createElement(Briefcase, { size: 40 }),
+        color: "from-blue-500 to-purple-600",
+        image: "/damaris-cv-preview.png"
     }
 ];
 

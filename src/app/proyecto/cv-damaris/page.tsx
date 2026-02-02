@@ -1,5 +1,5 @@
 import { PageNavigation } from "@/components/ui/PageNavigation";
-import { ArrowLeft, Briefcase, Calendar, GraduationCap, Mail, Target, TrendingUp, Users } from "lucide-react";
+import { ArrowLeft, Briefcase, Calendar, GraduationCap, Mail, Target, TrendingUp, Users, Sparkles } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -35,11 +35,20 @@ export default function DamarisCVPage() {
                             Volver a Mis Proyectos
                         </Link>
 
+                        {/* Project Category Badge */}
+                        <div className="flex mb-4 md:mb-6">
+                            <div
+                                className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-white shadow-lg"
+                            >
+                                <Sparkles size={14} className="text-blue-400" />
+                                <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+                                    Diseño Web & Branding Personal
+                                </span>
+                            </div>
+                        </div>
+
                         {/* Project Title */}
                         <div className="space-y-3 md:space-y-4 mb-6 md:mb-10">
-                            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 text-blue-600 text-[10px] md:text-xs font-bold uppercase tracking-widest">
-                                <span>Diseño Web & Branding Personal</span>
-                            </div>
                             <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
                                 CV Elite -{" "}
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
