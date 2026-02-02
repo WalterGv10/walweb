@@ -4,6 +4,7 @@ import { CommercialBanner } from "@/components/CommercialBanner";
 import { DigitalCVAction } from "@/components/DigitalCVAction";
 import { PageNavigation } from "@/components/ui/PageNavigation";
 import { ArchBackground } from "@/components/ArchBackground";
+import { ManualsSection } from "@/components/ManualsSection";
 
 import type { Metadata } from "next";
 
@@ -20,6 +21,7 @@ export default function ServicesPage() {
 
             <div className="relative z-10">
                 <Services />
+                <ManualsSection />
                 <TechExpertise />
                 <CommercialBanner />
                 <DigitalCVAction />

@@ -57,7 +57,7 @@ export function DigitalCVAction() {
                             className="flex flex-col sm:flex-row gap-6 pt-4"
                         >
                             <Link
-                                href="#contact"
+                                href="/contacto"
                                 className="group relative px-8 py-5 rounded-2xl bg-white text-black font-black uppercase tracking-widest text-sm flex items-center justify-center gap-3 hover:scale-105 transition-all shadow-xl shadow-white/10"
                             >
                                 Quiero el mío

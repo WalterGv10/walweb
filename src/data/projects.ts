@@ -1,5 +1,5 @@
 
-import { Globe, Droplets, PenTool, Music2, Shirt, Radio, Briefcase } from "lucide-react";
+import { Globe, Droplets, PenTool, Music2, Shirt, Radio, Briefcase, ScanText } from "lucide-react";
 import React from "react";
 
 export interface ProjectItem {
@@ -25,6 +25,17 @@ export const projectsData: ProjectItem[] = [
         icon: React.createElement(Briefcase, { size: 40 }),
         color: "from-blue-500 to-purple-600",
         image: "/damaris-cv-preview.png"
+    },
+    {
+        id: "control-fac",
+        title: "ControlFAC",
+        category: "SaaS & Automatización",
+        description: "Plataforma de gestión inteligente con OCR para digitalización de facturas. Stack robusto con React 18, PostgreSQL y Tesseract.js para automatizar la contabilidad.",
+        tags: ["React 18", "PostgreSQL", "OCR / AI", "SaaS"],
+        link: "/proyecto/control-fac",
+        icon: React.createElement(ScanText, { size: 40 }),
+        color: "from-orange-500 to-red-600",
+        image: "/controlfac-preview.png"
     },
     {
         id: "ram-pump",
