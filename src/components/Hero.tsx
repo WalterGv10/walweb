@@ -122,32 +122,6 @@ export function Hero() {
                         </motion.div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row gap-3 pt-4 lg:pt-4 px-6 sm:px-0 justify-center lg:justify-start">
-                        {/* Botón Principal - Siempre visible */}
-                        <Link
-                            href="/trabajo"
-                            className="group px-8 py-4 bg-white text-black font-black rounded-xl transition-all hover:scale-105 active:scale-95 items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.4)] text-base"
-                        >
-                            Ver mi Trabajo
-                            <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                        </Link>
-                    </div>
-
-                    {/* Skill Badges - Compacto para móvil */}
-                    <div className="flex flex-wrap justify-center lg:justify-start gap-3 lg:gap-4 pt-4 lg:pt-6 border-t border-white/5">
-                        <div className="flex items-center gap-2 text-gray-400 group cursor-default">
-                            <Code size={12} className="text-purple-500 group-hover:scale-110 transition-transform lg:w-[14px] lg:h-[14px]" />
-                            <span className="text-[9px] lg:text-xs font-medium uppercase tracking-widest text-purple-300/80">Desarrollo Web</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-gray-400 group cursor-default">
-                            <Layout size={12} className="text-blue-500 group-hover:scale-110 transition-transform lg:w-[14px] lg:h-[14px]" />
-                            <span className="text-[9px] lg:text-xs font-medium uppercase tracking-widest text-blue-300/80">Sistemas UI/UX</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-gray-400 group cursor-default">
-                            <HardHat size={12} className="text-cyan-500 group-hover:scale-110 transition-transform lg:w-[14px] lg:h-[14px]" />
-                            <span className="text-[9px] lg:text-xs font-medium uppercase tracking-widest text-cyan-300/80">Consultoría TI</span>
-                        </div>
-                    </div>
                 </div>
 
                 {/* Aspecto Visual: Avatar - Ajustado para Viewport Height */}
@@ -158,7 +132,7 @@ export function Hero() {
                         transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
                         className="relative will-change-transform"
                     >
-                        {/* Marco del Avatar - Optimizado para 384x701 (Móvil) y 1366x599 (Desktop) */}
+                        {/* Marco del Avatar */}
                         <div className="relative z-10 w-[220px] h-[300px] sm:w-[260px] sm:h-[340px] md:w-[300px] md:h-[400px] lg:w-[320px] lg:h-[420px] xl:w-[350px] xl:h-[480px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
                             <Image
                                 src="/walter_contact.png"
@@ -190,6 +164,35 @@ export function Hero() {
                             </div>
                         </motion.div>
                     </motion.div>
+                </div>
+
+                {/* Acciones principales y Badges - Bajadas al final en móvil */}
+                <div className="lg:col-span-7 space-y-6 lg:space-y-8 order-3 lg:order-2">
+                    <div className="flex flex-col sm:flex-row gap-3 px-6 sm:px-0 justify-center lg:justify-start">
+                        <Link
+                            href="/trabajo"
+                            className="group px-8 py-4 bg-white text-black font-black rounded-xl transition-all hover:scale-105 active:scale-95 items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.4)] text-base"
+                        >
+                            Ver mi Trabajo
+                            <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                        </Link>
+                    </div>
+
+                    {/* Skill Badges - Compacto para móvil */}
+                    <div className="flex flex-wrap justify-center lg:justify-start gap-3 lg:gap-4 pt-4 lg:pt-6 border-t border-white/5 mx-6 sm:mx-0">
+                        <div className="flex items-center gap-2 text-gray-400 group cursor-default">
+                            <Code size={12} className="text-purple-500 group-hover:scale-110 transition-transform lg:w-[14px] lg:h-[14px]" />
+                            <span className="text-[9px] lg:text-xs font-medium uppercase tracking-widest text-purple-300/80">Desarrollo Web</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-gray-400 group cursor-default">
+                            <Layout size={12} className="text-blue-500 group-hover:scale-110 transition-transform lg:w-[14px] lg:h-[14px]" />
+                            <span className="text-[9px] lg:text-xs font-medium uppercase tracking-widest text-blue-300/80">Sistemas UI/UX</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-gray-400 group cursor-default">
+                            <HardHat size={12} className="text-cyan-500 group-hover:scale-110 transition-transform lg:w-[14px] lg:h-[14px]" />
+                            <span className="text-[9px] lg:text-xs font-medium uppercase tracking-widest text-cyan-300/80">Consultoría TI</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
