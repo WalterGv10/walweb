@@ -48,18 +48,7 @@ export function StrategicVision() {
                     <div className="space-y-8 relative">
                         <div className="absolute -left-8 top-0 w-1 h-full bg-gradient-to-b from-blue-500/0 via-blue-500/20 to-blue-500/0 hidden lg:block" />
 
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 backdrop-blur-md shadow-sm"
-                        >
-                            <span className="relative flex h-2.5 w-2.5">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
-                            </span>
-                            <span className="text-xs font-bold text-slate-300 tracking-widest uppercase">Visión Estratégica</span>
-                        </motion.div>
+
 
                         <div className="space-y-4">
                             <motion.h2
