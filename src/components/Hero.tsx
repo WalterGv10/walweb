@@ -123,21 +123,13 @@ export function Hero() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-3 pt-4 lg:pt-4 px-6 sm:px-0 justify-center lg:justify-start">
-                        {/* Botón Principal - Solo visible en Desktop */}
-                        <Link
-                            href="/contacto"
-                            className="hidden lg:flex group px-8 py-4 bg-white text-black font-black rounded-xl transition-all hover:scale-105 active:scale-95 items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.4)] text-base"
-                        >
-                            Impulsa tu Proyecto
-                            <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                        </Link>
-
-                        {/* Botón Secundario - Siempre visible, pero discreto en móvil */}
+                        {/* Botón Principal - Siempre visible */}
                         <Link
                             href="/trabajo"
-                            className="px-6 py-3 lg:px-8 lg:py-4 bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white lg:text-white font-bold rounded-xl border border-white/10 backdrop-blur-md transition-all flex items-center justify-center text-xs lg:text-base underline lg:no-underline underline-offset-4 decoration-blue-500/30 lg:decoration-transparent"
+                            className="group px-8 py-4 bg-white text-black font-black rounded-xl transition-all hover:scale-105 active:scale-95 items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.4)] text-base"
                         >
                             Ver mi Trabajo
+                            <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                         </Link>
                     </div>
 
