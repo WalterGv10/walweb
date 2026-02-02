@@ -1,4 +1,6 @@
 "use client";
+import { CreditCard, ShieldCheck, Terminal, AlertCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function History() {
     const timeline = [
@@ -61,14 +63,57 @@ export function History() {
                             </div>
 
                             {/* Content */}
-                            <div className="w-[calc(100%-4rem)] md:w-[45%] p-5 md:p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition-all">
+                            <div className={`w-[calc(100%-4rem)] md:w-[45%] p-5 md:p-6 rounded-2xl border ${item.year === "2022" ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-white/10 bg-white/5'} backdrop-blur-md hover:bg-white/10 transition-all overflow-hidden relative group/card`}>
+                                {item.year === "2022" && (
+                                    <>
+                                        <div className="absolute top-0 right-0 p-2 opacity-20">
+                                            <CreditCard size={40} className="text-emerald-400 rotate-12" />
+                                        </div>
+                                        <div className="absolute top-2 right-4 flex gap-1">
+                                            <div className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
+                                            <div className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse delay-75" />
+                                        </div>
+                                    </>
+                                )}
+
                                 <div className="flex items-center justify-between mb-1 md:mb-2 text-xs md:text-sm">
-                                    <span className="font-bold text-cyan-400">{item.year}</span>
+                                    <span className={`font-bold ${item.year === "2022" ? 'text-emerald-400' : 'text-cyan-400'}`}>{item.year}</span>
+                                    {item.year === "2022" && (
+                                        <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/20">
+                                            <ShieldCheck size={10} className="text-emerald-400" />
+                                            <span className="text-[8px] font-black text-emerald-400 uppercase">Secure Link</span>
+                                        </div>
+                                    )}
                                 </div>
-                                <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2">{item.title}</h3>
-                                <p className="text-gray-300 text-[11px] md:text-sm leading-relaxed">
+
+                                <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2 flex items-center gap-2">
+                                    {item.title}
+                                    {item.year === "2022" && <Terminal size={14} className="text-emerald-400/50" />}
+                                </h3>
+
+                                <p className="text-gray-300 text-[11px] md:text-sm leading-relaxed relative z-10">
                                     {item.desc}
                                 </p>
+
+                                {item.year === "2022" && (
+                                    <div className="mt-3 pt-3 border-t border-emerald-500/10 flex items-center justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <div className="h-1 w-12 bg-zinc-800 rounded-full overflow-hidden">
+                                                <motion.div
+                                                    animate={{ x: ["-100%", "100%"] }}
+                                                    transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
+                                                    className="h-full w-1/2 bg-emerald-500"
+                                                />
+                                            </div>
+                                            <span className="text-[8px] font-mono text-emerald-500/60 uppercase">Processing...</span>
+                                        </div>
+                                        <div className="flex gap-1">
+                                            <div className="w-3 h-1 bg-emerald-500/20 rounded-full" />
+                                            <div className="w-3 h-1 bg-emerald-500/20 rounded-full" />
+                                            <div className="w-3 h-1 bg-emerald-500/50 rounded-full animate-pulse" />
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     ))}
