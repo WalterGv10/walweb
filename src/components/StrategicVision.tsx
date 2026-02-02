@@ -68,8 +68,8 @@ export function StrategicVision() {
                                 viewport={{ once: true }}
                                 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[1.1]"
                             >
-                                No es solo una web. <br />
-                                Es tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400">ventaja injusta.</span>
+                                Tu visión merece <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400">tecnología de élite.</span>
                             </motion.h2>
 
                             <motion.p
@@ -79,7 +79,7 @@ export function StrategicVision() {
                                 transition={{ delay: 0.2 }}
                                 className="text-lg text-slate-400 leading-relaxed max-w-lg"
                             >
-                                En 2026, la "presencia digital" no sirve si no factura. Transformamos tu tecnología en un activo que ahorra costos, atrae tráfico IA y vende mientras duermes.
+                                No creamos sitios estáticos; desarrollamos infraestructuras digitales a medida. Fusionamos la robustez del backend con experiencias interactivas de próxima generación para optimizar tu tiempo y elevar tu impacto profesional.
                             </motion.p>
                         </div>
 
@@ -90,7 +90,7 @@ export function StrategicVision() {
                             transition={{ delay: 0.4 }}
                             className="flex flex-wrap gap-4 pt-4"
                         >
-                            {["Automatización", "SEO para IA", "Ventas B2B"].map((tag, i) => (
+                            {["Estructura SaaS", "Experiencia de Usuario", "Eficiencia Operativa"].map((tag, i) => (
                                 <span key={i} className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-medium text-slate-400">
                                     {tag}
                                 </span>
