@@ -3,9 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import LightPillar from "@/components/LightPillar";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { StarField } from "@/components/ui/StarField";
-import { LanguageProvider } from "@/context/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,31 +19,22 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://walweb.com.gt"),
-  title: "WalWeb | Soluciones Digitales que Funcionan",
-  description: "Ayudo a que tu negocio, tienda o evento en Guatemala se vea profesional y atraiga clientes en internet con tecnología sencilla y efectiva.",
-  keywords: ["Walter Garcia", "WalWeb", "Desarrollo Web Guatemala", "Redes Cisco Ubiquiti", "Arquitectura Planos", "Sistemas de Inventario", "Soporte Bancario", "MTA Microsoft"],
+  title: "WalWeb | Innovación Digital & Soluciones Tecnológicas",
+  description: "Si tu propósito es innovar o hacerte la vida más fácil, estás en el lugar correcto. Especialista en Desarrollo Web, UI/UX y Consultoría TI en Guatemala.",
+  keywords: ["Walter Garcia", "WalWeb", "Desarrollo Web Guatemala", "Software Guatemala", "Diseño UX/UI", "Sistemas a Medida", "Consultoría TI"],
   authors: [{ name: "Walter García" }],
   openGraph: {
-    title: "WalWeb | Soluciones Digitales que Funcionan",
-    description: "Ayudo a que tu negocio o evento en Guatemala atraiga clientes con tecnología sencilla y diseño profesional.",
+    title: "WalWeb | Innovación Digital & Soluciones Tecnológicas",
+    description: "Transformamos ideas en realidad digital con tecnología disruptiva y diseño premium.",
     url: "https://walweb.com.gt",
     siteName: "WalWeb",
-    images: [
-      {
-        url: "https://walweb.com.gt/walter_v2.jpg",
-        width: 1200,
-        height: 1200,
-        alt: "WalWeb - Soluciones Digitales",
-      },
-    ],
     locale: "es_GT",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WalWeb | Soluciones Digitales",
-    description: "Tecnología sencilla para gente que trabaja en Guatemala.",
-    images: ["https://walweb.com.gt/walter_v2.jpg"],
+    title: "WalWeb | Innovación Digital",
+    description: "Desarrollo de Software y Diseño Estratégico para impulsar tu visión.",
   },
   // icons: {
   //   icon: [
@@ -90,13 +81,12 @@ export default function RootLayout({
         {/* Stars Effect */}
         <StarField />
 
-        <LanguageProvider>
-          <Header />
-          <main className="relative z-10 w-full h-full">
-            {children}
-          </main>
-          <JsonLd />
-        </LanguageProvider>
+        <Header />
+        <main className="relative z-10 w-full h-full">
+          {children}
+        </main>
+        <Footer />
+        <JsonLd />
       </body>
     </html>
   );

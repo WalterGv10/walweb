@@ -4,14 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
-import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
-import { useLanguage } from "@/context/LanguageContext";
+import { usePathname, useRouter } from "next/navigation";
 
 export function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [hoveredLink, setHoveredLink] = useState<string | null>(null);
-    const { t } = useLanguage();
+    const pathname = usePathname();
+    const router = useRouter();
+
+    // Detect if we're on a light background page
+    const isLightBgPage = pathname?.startsWith('/proyecto/');
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -20,11 +23,22 @@ export function Header() {
     }, []);
 
     const navLinks = [
-        { name: t.header.nav.services, href: "/servicios" },
-        { name: t.header.nav.worldcup, href: "/mundial" },
-        { name: t.header.nav.trajectory, href: "/trayectoria" },
-        { name: t.header.nav.contact, href: "/contacto" },
+        { name: "Inicio", href: "/" },
+        { name: "Servicios", href: "/servicios" },
+        { name: "Trayectoria", href: "/trayectoria" },
+        { name: "Trabajo", href: "/trabajo" },
+        { name: "Mundial 2026", href: "/mundial" },
+        { name: "Arquitectura", href: "/arquitectura" },
+        { name: "Contacto", href: "/contacto" },
     ];
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (pathname === href) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        if (mobileMenuOpen) setMobileMenuOpen(false);
+    };
 
     return (
         <header className="fixed top-0 left-0 w-full z-50 px-4 py-4 pointer-events-none">
@@ -39,11 +53,13 @@ export function Header() {
                 <div
                     className={`relative flex items-center justify-between transition-all duration-500 rounded-2xl md:rounded-[2.5rem] px-6 md:px-10 ${scrolled
                         ? "py-3 bg-black/40 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
-                        : "py-6 bg-transparent border border-transparent"
+                        : isLightBgPage
+                            ? "py-4 bg-black/60 backdrop-blur-2xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                            : "py-6 bg-transparent border border-transparent"
                         }`}
                 >
                     {/* Logo & Brand */}
-                    <Link href="/" className="flex items-center gap-2 md:gap-3 group relative z-50">
+                    <Link href="/" onClick={(e) => handleNavClick(e, "/")} className="flex items-center gap-2 md:gap-3 group relative z-50">
                         <div className="relative w-8 h-8 md:w-12 md:h-12 rounded-xl overflow-hidden border border-white/10 group-hover:border-blue-500/50 transition-all bg-black/40 backdrop-blur-md">
                             <Image
                                 src="/wal-logo.png"
@@ -66,6 +82,7 @@ export function Header() {
                             <Link
                                 key={link.name}
                                 href={link.href}
+                                onClick={(e) => handleNavClick(e, link.href)}
                                 onMouseEnter={() => setHoveredLink(link.name)}
                                 onMouseLeave={() => setHoveredLink(null)}
                                 className="relative px-5 py-2 text-sm font-semibold text-gray-300 hover:text-white transition-colors"
@@ -87,14 +104,14 @@ export function Header() {
 
                     {/* CTA Button */}
                     <div className="hidden md:flex items-center gap-4">
-                        <LanguageSwitcher />
                         <Link
                             href="/contacto"
+                            onClick={(e) => handleNavClick(e, "/contacto")}
                             className="group relative px-6 py-2.5 rounded-full bg-blue-600 overflow-hidden transition-all hover:scale-105 active:scale-95"
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                             <span className="relative flex items-center gap-2 text-sm font-black text-white uppercase tracking-widest">
-                                {t.header.cta}
+                                Consultoría
                                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                             </span>
                         </Link>
@@ -105,8 +122,7 @@ export function Header() {
                         className={`md:hidden p-2 rounded-xl transition-colors ${mobileMenuOpen ? 'bg-white/10' : 'bg-transparent'}`}
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     >
-                        <LanguageSwitcher />
-                        {mobileMenuOpen ? <X size={24} className="text-white ml-2" /> : <Menu size={24} className="text-white ml-2" />}
+                        {mobileMenuOpen ? <X size={24} className="text-white" /> : <Menu size={24} className="text-white" />}
                     </button>
                 </div>
             </motion.div>
@@ -118,7 +134,7 @@ export function Header() {
                         initial={{ opacity: 0, scale: 0.95, y: -20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                        className="absolute top-24 left-4 right-4 pointer-events-auto bg-black/80 backdrop-blur-3xl border border-white/10 rounded-3xl p-8 md:hidden flex flex-col gap-6 shadow-2xl overflow-hidden"
+                        className="absolute top-24 left-4 right-4 pointer-events-auto bg-black/30 backdrop-blur-3xl border border-white/10 rounded-3xl p-8 md:hidden flex flex-col gap-6 shadow-2xl overflow-hidden"
                     >
                         {/* Background Decoration */}
                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 blur-3xl rounded-full" />
@@ -133,7 +149,7 @@ export function Header() {
                                 >
                                     <Link
                                         href={link.href}
-                                        onClick={() => setMobileMenuOpen(false)}
+                                        onClick={(e) => handleNavClick(e, link.href)}
                                         className="text-2xl font-black text-white hover:text-blue-400 transition-colors uppercase tracking-tight"
                                     >
                                         {link.name}
@@ -150,7 +166,7 @@ export function Header() {
                         >
                             <Link
                                 href="/contacto"
-                                onClick={() => setMobileMenuOpen(false)}
+                                onClick={(e) => handleNavClick(e, "/contacto")}
                                 className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white flex items-center justify-center gap-3 font-black uppercase tracking-widest shadow-xl shadow-blue-500/20"
                             >
                                 Contratar Ahora

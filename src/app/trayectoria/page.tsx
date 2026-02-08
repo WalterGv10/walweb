@@ -1,6 +1,6 @@
 import { History } from "@/components/History";
-import { ArchWorkflow } from "@/components/ArchWorkflow";
 import { PersonalStats } from "@/components/PersonalStats";
+import { PageNavigation } from "@/components/ui/PageNavigation";
 
 import type { Metadata } from "next";
 
@@ -14,7 +14,7 @@ export default function TrayectoriaPage() {
         <div className="w-full pt-20">
             <History />
             <PersonalStats />
-            <ArchWorkflow />
+            <PageNavigation nextPath="/trabajo" nextLabel="Ver Mi Trabajo" />
         </div>
     );
 }

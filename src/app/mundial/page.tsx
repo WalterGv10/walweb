@@ -1,5 +1,6 @@
 import { WorldCup2026 } from "@/components/WorldCup2026";
 import { Contact } from "@/components/Contact";
+import { PageNavigation } from "@/components/ui/PageNavigation";
 
 import type { Metadata } from "next";
 
@@ -13,6 +14,7 @@ export default function MundialPage() {
         <div className="w-full pt-20">
             <WorldCup2026 />
             <Contact />
+            <PageNavigation nextPath="/arquitectura" nextLabel="Arquitectura & Diseño" />
         </div>
     );
 }

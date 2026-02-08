@@ -3,9 +3,9 @@ export default function JsonLd() {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "WalWeb - Soluciones Digitales",
-        "image": "https://walweb.com.gt/walter_pro.png",
-        "@id": "https://walweb.com.gt",
-        "url": "https://walweb.com.gt",
+        "image": "https://walweb.vercel.app/walter_contact.png",
+        "@id": "https://walweb.vercel.app",
+        "url": "https://walweb.vercel.app",
         "telephone": "+50254122572",
         "priceRange": "$$",
         "address": {
@@ -32,8 +32,7 @@ export default function JsonLd() {
             "closes": "18:00"
         },
         "sameAs": [
-            "https://www.linkedin.com/in/waltergf",
-            "https://www.youtube.com/@walwebsolutions",
+            "https://www.linkedin.com/in/waltetergv/",
             "https://www.tiktok.com/@walwebsolutions",
             "https://wa.me/50254122572"
         ],

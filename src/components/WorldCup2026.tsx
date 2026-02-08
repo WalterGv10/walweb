@@ -1,11 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { Trophy, Users, Utensils, ArrowRight, Zap } from "lucide-react";
-import { useLanguage } from "@/context/LanguageContext";
 
 export function WorldCup2026() {
-    const { t } = useLanguage();
-
     return (
         <section className="py-24 px-4 relative bg-slate-950 overflow-hidden">
             {/* Background Atmosphere */}
@@ -22,18 +19,19 @@ export function WorldCup2026() {
                         className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6"
                     >
                         <Trophy className="w-4 h-4 text-blue-400" />
-                        <span className="text-xs font-bold text-blue-400 uppercase tracking-widest">{t.world_cup_2026.badge}</span>
+                        <span className="text-xs font-bold text-blue-400 uppercase tracking-widest">Kickoff 2026</span>
                     </motion.div>
 
                     <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter leading-[0.9] mb-6">
-                        {t.world_cup_2026.title_part1} <br />
+                        NO VEAS EL MUNDIAL. <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
-                            {t.world_cup_2026.title_highlight}
+                            VENDE CON ÉL.
                         </span>
                     </h2>
 
                     <p className="text-lg md:text-xl text-slate-400 leading-relaxed">
-                        {t.world_cup_2026.description}
+                        Miles de guatemaltecos buscando dónde ver el partido. <br className="hidden md:block" />
+                        Tu negocio puede ser su estadio o solo otra opción más.
                     </p>
                 </div>
 
@@ -52,20 +50,22 @@ export function WorldCup2026() {
                                 <Users className="w-7 h-7 text-blue-400" />
                             </div>
 
-                            <h3 className="text-3xl font-bold text-white mb-4">{t.world_cup_2026.cards.corporate.title}</h3>
-                            <p className="text-slate-400 text-lg mb-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: t.world_cup_2026.cards.corporate.description }} />
+                            <h3 className="text-3xl font-bold text-white mb-4">Quiniela Corporativa</h3>
+                            <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+                                Olvida el Excel. Crea una liga privada para tu empresa con <strong>branding personalizado</strong>. Aumenta la moral, reduce la rotación y fideliza clientes B2B.
+                            </p>
 
                             {/* Mini Mockup */}
                             <div className="bg-slate-950/50 rounded-xl border border-white/10 p-4 backdrop-blur-md">
                                 <div className="flex items-center justify-between mb-3 text-xs text-slate-500 uppercase font-bold tracking-widest">
-                                    <span>{t.world_cup_2026.cards.corporate.mockup.ranking}</span>
-                                    <span>{t.world_cup_2026.cards.corporate.mockup.points}</span>
+                                    <span>Ranking</span>
+                                    <span>Puntos</span>
                                 </div>
                                 <div className="space-y-3">
                                     {[
-                                        { name: `Juan (${t.world_cup_2026.cards.corporate.mockup.departments.sales})`, pts: 152, color: "bg-blue-500" },
-                                        { name: `Ana (${t.world_cup_2026.cards.corporate.mockup.departments.hr})`, pts: 148, color: "bg-indigo-500" },
-                                        { name: `Carlos (${t.world_cup_2026.cards.corporate.mockup.departments.it})`, pts: 145, color: "bg-purple-500" },
+                                        { name: "Juan (Ventas)", pts: 152, color: "bg-blue-500" },
+                                        { name: "Ana (RRHH)", pts: 148, color: "bg-indigo-500" },
+                                        { name: "Carlos (IT)", pts: 145, color: "bg-purple-500" },
                                     ].map((user, i) => (
                                         <div key={i} className="flex items-center justify-between">
                                             <div className="flex items-center gap-3">
@@ -92,23 +92,26 @@ export function WorldCup2026() {
                                 <Utensils className="w-7 h-7 text-orange-400" />
                             </div>
 
-                            <h3 className="text-3xl font-bold text-white mb-4">{t.world_cup_2026.cards.horeca.title}</h3>
-                            <p className="text-slate-400 text-lg mb-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: t.world_cup_2026.cards.horeca.description }} />
+                            <h3 className="text-3xl font-bold text-white mb-4">Menús Dinámicos</h3>
+                            <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+                                Si hay gol de Brasil, la cerveza baja 50% por 5 minutos. <br />
+                                <strong>Gamificación en tiempo real</strong> para restaurantes y bares. Convierte la emoción en consumo.
+                            </p>
 
                             {/* Mini Mockup */}
                             <div className="bg-slate-950/50 rounded-xl border border-white/10 p-4 backdrop-blur-md relative overflow-hidden">
                                 <div className="absolute top-0 right-0 px-3 py-1 bg-red-500 text-white text-[10px] font-bold uppercase tracking-wider rounded-bl-xl animate-pulse">
-                                    {t.world_cup_2026.cards.horeca.mockup.event}
+                                    GOL DE BRASIL
                                 </div>
                                 <div className="flex items-center gap-4 mt-2">
                                     <div className="w-16 h-16 rounded-lg bg-orange-500/20 flex items-center justify-center">
                                         <Zap className="w-8 h-8 text-orange-500" />
                                     </div>
                                     <div>
-                                        <p className="text-slate-400 text-xs uppercase font-bold text-decoration-line-through">{t.world_cup_2026.cards.horeca.mockup.before}: Q35.00</p>
+                                        <p className="text-slate-400 text-xs uppercase font-bold text-decoration-line-through">Antes: Q35.00</p>
                                         <div className="flex items-baseline gap-2">
                                             <span className="text-3xl font-black text-white">Q15.00</span>
-                                            <span className="text-xs text-green-400 font-bold">{t.world_cup_2026.cards.horeca.mockup.offer}</span>
+                                            <span className="text-xs text-green-400 font-bold">Oferta Flash</span>
                                         </div>
                                         <div className="w-full bg-white/10 h-1.5 rounded-full mt-2 overflow-hidden">
                                             <motion.div
@@ -134,7 +137,7 @@ export function WorldCup2026() {
                         whileTap={{ scale: 0.98 }}
                         className="px-10 py-5 bg-white text-slate-950 font-black text-lg rounded-full shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.5)] transition-all flex items-center gap-3"
                     >
-                        {t.world_cup_2026.cta}
+                        Quiero mi Estrategia Mundialista
                         <ArrowRight className="w-5 h-5" />
                     </motion.a>
                 </div>
